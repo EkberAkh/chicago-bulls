@@ -1,42 +1,76 @@
-#root {
-  max-width: 1280px;
+:root {
+  --red: #b40f36;
+  --white: #fff;
+  --black: #1e1e1e;
+  --gray-white: #f2f2f2;
+  --gray: #525252;
+  --bg-black: #010001;
+  --secular-16: 16px "Secular One", sans-serif;
+  --secular-28: 28px "Secular One", sans-serif;
+  --lexend-16: light 16px "Lexend", sans-serif;
+  --lexend-12-regular: light 12px "Lexend", sans-serif;
+  --lexend-12-regular: 12px "Lexend", sans-serif;
+}
+
+body {
+  background-color: var(--bg-black);
+}
+
+.container {
+  max-width: 86%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+}
+header{
+  padding-top: 14px;
+}
+.container > .header-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container > .header-items > nav > ul {
+  display: flex;
+  list-style-type: none;
+  color: var(--white);
+  font: var(--secular-16);
+  gap: 54px;
+}
+.container > .header-items > nav > ul>li>.active{
+  color: var(--red)!important;
+}
+.container > .header-items > nav > ul>li>.link{
+  color: var(--white);
+  text-decoration: none;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container>.header-items>.header-end{
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:where(.css-dev-only-do-not-override-18iikkb).ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
+  background-color: 
+  #F0F0F0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  font-family: 'Cairo';
+  font-size: 18px;
+  font-weight: bold;   
+}
+:where(.css-dev-only-do-not-override-amq5gd).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  position: relative;
+  background-color:var(--bg-black);
+  border:none;
+  color: #fff;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+:where(.css-dev-only-do-not-override-amq5gd).ant-select .ant-select-arrow{
+  color: #fff;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+:where(.css-dev-only-do-not-override-amq5gd).ant-select{
+  max-width: 60px;
 }
