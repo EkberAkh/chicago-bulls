@@ -1,2 +1,2 @@
 # chicago-bulls
-This is the final project for IATC
+This is the final project of IATC
