@@ -1,0 +1,22 @@
+@import url('../../App.css');
+.gallery {
+    margin-top: 30px;
+  }
+  
+  .gallery > .container > .title {
+    color: var(--red);
+    font: var(--secular-28);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track{
+    gap: 14px;
+  }
+  .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track > .react-multi-carousel-item {
+    max-width: 278px!important;
+  }
+  .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track > .react-multi-carousel-item > .gallery-item>img {
+  width: 100%;
+  
+  
+  }

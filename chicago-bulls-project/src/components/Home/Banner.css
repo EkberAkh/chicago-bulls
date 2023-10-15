@@ -1,0 +1,40 @@
+@import url("../../App.css");
+
+.banner {
+  margin-top: 40px;
+  min-height: 648px;
+  background-image: url("../../assets/banner.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+.banner > .container > .banner-inner {
+  display: flex;
+  padding: 100px 0;
+}
+.banner > .container > .banner-inner > .banner-left {
+  flex: 1;
+
+  > p {
+    text-transform: uppercase;
+    font: var(--secular-56);
+    color: var(--white);
+    > span {
+      color: var(--black);
+    }
+  }
+  > button {
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font: var(--secular-28);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+}
+.banner > .container > .banner-inner > .banner-right {
+  flex: 1.8;
+}
