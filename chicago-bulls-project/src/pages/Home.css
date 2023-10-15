@@ -1,2 +1,31 @@
 @import url("../App.css");
 
+.about{
+  margin-top: 30px;
+}
+
+.about>.title{
+  text-align: center;
+  font: var(--secular-28);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.about>.container>.about-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.about>.container>.about-wrapper>.about-left>img{
+  width: 100%;
+}
+.about>.container>.about-wrapper>.about-right{
+  color: var(--white);
+  font: var(--lexend-16);
+  font-weight: lighter;
+ 
+  
+  >p{
+    margin-bottom: 16px;
+  }
+}
+
