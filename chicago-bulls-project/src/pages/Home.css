@@ -1,31 +1,55 @@
 @import url("../App.css");
 
-.about{
+footer {
   margin-top: 30px;
+  background-color: var(--gray-white);
+  padding: 60px 0 30px 0;
 }
 
-.about>.title{
-  text-align: center;
-  font: var(--secular-28);
-  color: var(--white);
-  margin-bottom: 20px;
-}
-.about>.container>.about-wrapper{
+footer > .container > .footer-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 100px;
+  margin-bottom: 40px;
 }
-.about>.container>.about-wrapper>.about-left>img{
-  width: 100%;
-}
-.about>.container>.about-wrapper>.about-right{
-  color: var(--white);
-  font: var(--lexend-16);
-  font-weight: lighter;
- 
-  
-  >p{
+
+footer > .container > .footer-wrapper > .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > img {
     margin-bottom: 16px;
+  }
+  > .social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+}
+footer > .container > .footer-wrapper>.footer-item{
+  text-transform: uppercase;
+  >ul{
+    list-style-type: none;
+    font: var(--lexend-12-light);
+    >li{
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+  }
+  >.title{
+    font: var(--secular-16);
+    margin-bottom: 16px;
+
   }
 }
 
+footer > .container > .footer-end{
+  font: var(--lexend-12-light);
+  >p{
+    margin-bottom: 10px;
+  }
+  >p:last-child{
+    margin: 0;
+  }
+
+}
