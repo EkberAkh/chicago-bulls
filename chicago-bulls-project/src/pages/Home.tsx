@@ -18,7 +18,7 @@ const Home = () => {
       <Gallery />
       <About/>
       <Footer/>
-     
+     {/* dwkjw */}
     </>
   );
 };
