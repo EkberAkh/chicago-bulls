@@ -4,8 +4,13 @@ import Banner from "../components/Home/Banner";
 import Upcoming from "../components/Home/Upcoming";
 import News from "../components/Home/News";
 import Gallery from "../components/Home/Gallery";
-import about_img from "../assets/about.png";
-import { Link } from "react-router-dom";
+import About from "../components/Home/About";
+import logo from '../assets/logo.png'; 
+import insta from '../assets/instagram.png'; 
+import fb from '../assets/facebook.png'; 
+import youtube from '../assets/youtube.png'; 
+import twitter from '../assets/twitter.png'; 
+
 
 const Home = () => {
   return (
@@ -14,43 +19,81 @@ const Home = () => {
       <Upcoming />
       <News />
       <Gallery />
-      <section className="about">
-        <h2 className="title">About us</h2>
+      <About/>
+      <footer>
         <div className="container">
-          <div className="about-wrapper">
+          <div className="footer-wrapper">
+            <div className="logo">
+              <img src={logo} alt="logo" />
+              <div className="social">
+                <img src={insta} alt="insta" />
+                <img src={fb} alt="fb" />
+                <img src={youtube} alt="yt" />
+                <img src={twitter} alt="twitter" />
 
-          <div className="about-left">
-            <img src={about_img} alt="" />
+              </div>
+            </div>
+            <div className="team footer-item">
+              <h3 className="title">team</h3>
+              <ul>
+                
+                <li>Team Roster</li>
+                <li>Stats</li>
+                <li>Team Leaders</li>
+                <li>Staff Directory</li>
+                <li>Career Opportunities</li>
+              </ul>
+            </div>
+            <div className="ticket footer-item">
+            <h3 className="title">ticket</h3>
+
+              <ul>
+
+                <li>Click Tix</li>
+                <li>Schedule</li>
+                <li>Season Tickets</li>
+                <li>Single Tickets</li>
+                <li>Group Tickets</li>
+                <li>Family Ticket Packs</li>
+                <li>Student Pass</li>
+                <li>Print Schedule</li>
+                <li>Windy City</li>
+              </ul>
+            </div>
+            <div className="shop footer-item">
+            <h3 className="title">shop</h3>
+
+              <ul>
+                <li>Jerseys</li>
+                <li>Hats</li>
+                <li>T‑Shirts</li>
+                <li>Kids</li>
+                <li>Madhouse Team Store</li>
+              
+              </ul>
+            </div>
+            <div className="footer-news footer-item">
+            <h3 className="title">news</h3>
+
+              <ul>
+                <li>Sam Smith</li>
+                <li>Chuck Checks In</li>
+                <li>Partner News</li>
+                <li>Injury Report</li>
+                <li>Game Notes</li>
+                <li>2022‑23 Media Guidee</li>
+              
+              </ul>
+            </div>
           </div>
-          <div className="about-right">
-            <p>
-              The Chicago Bulls are an American professional basketball team
-              based in Chicago. The Bulls compete in the National Basketball
-              Association (NBA) as a member of the league's Eastern Conference
-              Central Division. The team was founded on January 16, 1966, and
-              played its first game during the 1966–67 NBA season. The Bulls
-              play their home games at the United Center, an arena on Chicago's
-              West Side.
-            </p>
-            <p>
-              The Bulls saw their greatest success during the 1990s when they
-              played a major part in popularizing the NBA worldwide. They are
-              known for having one of the NBA's greatest dynasties, winning six
-              NBA championships between 1991 and 1998 with two three-peats. All
-              six of their championship teams were led by Hall of Famers Michael
-              Jordan, Scottie Pippen, and coach Phil Jackson. The Bulls are the
-              only NBA franchise to win multiple championships while never
-              losing an NBA Finals series in their history.
-            </p>
-            <p>
-              The Bulls won 72 games during the 1995–96 season, setting an NBA
-              record.
-            </p>
-            <Link to="/news">See more</Link>
-          </div>
+          <div className="footer-end">
+            <p>Copyright © 2023 All rights reserved.</p>
+            <p>Privacy Policy | Terms of Use | Customer Support | Accessibility and Closed Captions | Your Privacy Choices</p>
+            <p>Cookie Policy | EEA/UK Privacy Statement | Brazil Privacy Statement | California Consumer Privacy Statement | Colorado Consumer Privacy Statement</p>
+            <p>If you are having difficulty accessing any content on this website, please visit our Accessibility page.</p>
           </div>
         </div>
-      </section>
+      </footer>
     </>
   );
 };
