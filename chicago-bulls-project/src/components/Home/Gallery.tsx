@@ -14,8 +14,8 @@ const Gallery = () => {
           slidesToSlide: 2,
         },
         desktop: {
-          breakpoint: { max: 1224, min: 800 },
-          items: 4,
+          breakpoint: { max: 1300, min: 800 },
+          items: 3,
           
         },
         tablet: {
@@ -33,7 +33,7 @@ const Gallery = () => {
       <div className="container">
         <h2 className="title">Gallery</h2>
         <div className="gallery-wrapper">
-          <Carousel responsive={responsive}>
+          <Carousel keyBoardControl={true} draggable={true} showDots={true} autoPlay={true} autoPlaySpeed={3000} infinite={true} responsive={responsive}>
           <div className="gallery-item">
             <img src={gallery} alt="" />
           </div>

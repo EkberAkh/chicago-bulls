@@ -1,8 +1,12 @@
-import React from 'react'
+import { TeamBanner, TeamMembers } from '../components'
 import './Team.css'
+
 const Team = () => {
   return (
-    <div>Team</div>
+    <div>
+      <TeamBanner/>
+      <TeamMembers/>
+    </div>
   )
 }
 
