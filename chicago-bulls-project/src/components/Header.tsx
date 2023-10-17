@@ -1,11 +1,10 @@
-import React from "react";
 import "./Header.css";
 import logo from "../assets/logo.png";
 import cart from "../assets/shopping-cart.png";
 import hamburger from "../assets/hamburger.png";
 
 import { Select, Space } from "antd";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const handleChange = (value: string) => {
   console.log(`selected ${value}`);
@@ -22,30 +21,30 @@ const Header = () => {
           
             <ul>
               <li>
-                <Link className="link active" to="/">
+                <NavLink id="home" className="link" to="/">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="link" to="/team">
+                <NavLink id="team" className="link" to="/team">
                   Team
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="link" to="/gallery">
+                <NavLink id="gallery" className="link" to="/gallery">
                   Gallery
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="link" to="/news">
+                <NavLink id="news" className="link" to="/news">
                   News
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link className="link" to="/shop">
+                <NavLink id="shop" className="link" to="/shop">
                   Shop
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>
