@@ -1,0 +1,1 @@
+export { TeamBanner, TeamMembers } from './Team'
