@@ -1,6 +1,8 @@
 import "./Header.css";
 import logo from "../assets/logo.png";
 import cart from "../assets/shopping-cart.png";
+import hamburger from "../assets/hamburger.png";
+
 import { Select, Space } from "antd";
 import { NavLink } from "react-router-dom";
 
@@ -16,6 +18,7 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </div>
           <nav>
+          
             <ul>
               <li>
                 <NavLink id="home" className="link" to="/">
@@ -46,6 +49,10 @@ const Header = () => {
             </ul>
           </nav>
           <div className="header-end">
+          <button className="hamburger-menu">
+              <img src={hamburger} alt="hamburger" />
+
+            </button>
             <img src={cart} alt="" />
             <Space wrap>
               <Select

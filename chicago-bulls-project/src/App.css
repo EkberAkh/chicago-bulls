@@ -12,7 +12,7 @@
   --secular-28: 28px "Secular One", sans-serif;
   --secular-40: 40px "Secular One", sans-serif;
   --secular-56: 56px "Secular One", sans-serif;
-  --lexend-16:  16px "Lexend", sans-serif;
+  --lexend-16: 16px "Lexend", sans-serif;
   --lexend-12-light: lighter 12px "Lexend", sans-serif;
   --lexend-12-regular: 12px "Lexend", sans-serif;
   --lexend-14-regular: 14px "Lexend", sans-serif;
@@ -26,4 +26,11 @@ body {
   max-width: 86%;
   margin: 0 auto;
 }
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
 
