@@ -3,6 +3,10 @@
 header{
     padding-top: 14px;
     text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-black);
+    z-index: 1001;
   }
   .container > .header-items {
     display: flex;
@@ -16,13 +20,16 @@ header{
     font: var(--secular-16);
     gap: 54px;
   }
-  .container > .header-items > nav > ul>li>.active{
-    color: var(--red)!important;
-  }
+
   .container > .header-items > nav > ul>li>.link{
-    color: var(--white);
     text-decoration: none;
+    color: var(--white);
   }
+
+  .container > .header-items > nav > ul>li>.active{
+    color: var(--red);
+  }
+
   
   .container>.header-items>.header-end{
     display: flex;
