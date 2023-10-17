@@ -48,6 +48,7 @@ const Footer = () => {
             <li>Windy City</li>
           </ul>
         </div>
+        <div className="empty"></div>
         <div className="shop footer-item">
         <h3 className="title">shop</h3>
 
