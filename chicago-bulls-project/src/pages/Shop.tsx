@@ -1,8 +1,14 @@
-import React from 'react'
-import './Shop.css'
+
+import { ShopBanner, Categories, Products } from '../components'
+
+
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <>
+      <ShopBanner/>
+      <Categories/>
+      <Products/>
+    </>
   )
 }
 

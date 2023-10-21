@@ -40,7 +40,7 @@ const Upcoming = () => {
       <div className="card-section">
     
         <div className="cards">
-          <Carousel draggable={true} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true} responsive={responsive}>
+          <Carousel draggable={true} autoPlay={true} autoPlaySpeed={2000} showDots={true} infinite={true} responsive={responsive}>
 
 
          <Card img={bulls} img2={bucks} date='Oct 8, 12:00 pm'/>
