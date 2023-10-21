@@ -1,6 +1,6 @@
 import "./Header.css";
 import logo from "../assets/logo.png";
-import cart from "../assets/shopping-cart.png";
+import cart from "../assets/shopping-cart-white.png";
 import hamburger from "../assets/hamburger.png";
 
 import { Select, Space } from "antd";
@@ -53,11 +53,11 @@ const Header = () => {
               <img src={hamburger} alt="hamburger" />
 
             </button>
-            <img src={cart} alt="" />
+            <img src={cart} className="shopping-cart" alt="" />
             <Space wrap>
               <Select
                 defaultValue="en"
-                style={{ width: 120 }}
+                style={{ width: 60 }}
                 onChange={handleChange}
                 options={[
                   { value: "az", label: "AZ" },
