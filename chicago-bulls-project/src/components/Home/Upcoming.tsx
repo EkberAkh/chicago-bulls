@@ -20,12 +20,12 @@ const Upcoming = () => {
         },
         desktop: {
           breakpoint: { max: 1024, min: 800 },
-          items: 3,
+          items: 2,
           
         },
         tablet: {
-          breakpoint: { max: 800, min: 464 },
-          items: 2,
+          breakpoint: { max: 780, min: 464 },
+          items: 1,
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
@@ -40,7 +40,9 @@ const Upcoming = () => {
       <div className="card-section">
     
         <div className="cards">
-          <Carousel draggable={true} autoPlay={true} autoPlaySpeed={2000} showDots={true} infinite={true} responsive={responsive}>
+
+          <Carousel partialVisbile={false} draggable={true} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true} responsive={responsive}>
+
 
 
          <Card img={bulls} img2={bucks} date='Oct 8, 12:00 pm'/>

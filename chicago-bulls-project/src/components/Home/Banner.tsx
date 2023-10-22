@@ -1,8 +1,9 @@
 import './Banner.css';
-
+import banner from '../../assets/banner.png';
 const Banner = () => {
   return (
     <section className="banner">
+      <img className='banner-img' src={banner} alt="" />
     <div className="container">
       <div className="banner-inner">
         <div className="banner-left">
