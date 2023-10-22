@@ -11,16 +11,11 @@
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-  /* .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track{
-    gap: 14px;
-  } */
-  /* .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track > .react-multi-carousel-item {
-    max-width: 200px!important;
-  }  */
-  /* .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track > .react-multi-carousel-item > .gallery-item>img {
-  width: 100%;
+
+  .gallery > .container > .gallery-wrapper>.react-multi-carousel-list>.react-multi-carousel-track > .react-multi-carousel-item > .gallery-item>img {
+  width: 90%;
   
   
-  } */
+  }
 
   

@@ -65,3 +65,12 @@
       font-weight: bolder;
     }
   } 
+
+  @media(max-width:848px){
+    .news > .container > .news-wrapper {
+      grid-template-columns:  1fr;
+    }
+    .news > .container > .news-wrapper > .news-card >.news-img{
+      width: 100%;
+    }
+  }

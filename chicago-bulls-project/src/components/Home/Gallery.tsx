@@ -9,18 +9,19 @@ const Gallery = () => {
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 1024 },
+          breakpoint: { max: 1500, min: 1045 },
           items: 4,
           slidesToSlide: 2,
+
         },
         desktop: {
-          breakpoint: { max: 1300, min: 800 },
+          breakpoint: { max: 1045, min: 650 },
           items: 3,
           
         },
         tablet: {
-          breakpoint: { max: 800, min: 464 },
-          items: 3,
+          breakpoint: { max: 650, min: 464 },
+          items: 2,
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
@@ -33,7 +34,7 @@ const Gallery = () => {
       <div className="container">
         <h2 className="title">Gallery</h2>
         <div className="gallery-wrapper">
-          <Carousel keyBoardControl={true} draggable={true} showDots={true} autoPlay={true} autoPlaySpeed={3000} infinite={true} responsive={responsive}>
+          <Carousel  keyBoardControl={true} draggable={true} showDots={true} autoPlay={true} autoPlaySpeed={3000} infinite={true} responsive={responsive}>
           <div className="gallery-item">
             <img src={gallery} alt="" />
           </div>
