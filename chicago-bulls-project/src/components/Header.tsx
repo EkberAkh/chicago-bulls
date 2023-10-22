@@ -1,6 +1,6 @@
 import "./Header.css";
 import logo from "../assets/logo.png";
-import cart from "../assets/shopping-cart.png";
+import cart from "../assets/shopping-cart-white.png";
 import hamburger from "../assets/hamburger.png";
 import closeMark from "../assets/close.png";
 
@@ -77,6 +77,7 @@ const Header = () => {
                   </NavLink>
                 </li>
 
+
                 <li>
                   <NavLink id="shop" className="link" to="/shop">
                     Shop
@@ -102,6 +103,8 @@ const Header = () => {
                 />
               </Space>
             </div>
+
+    
           </div>
         </div>
       </header>

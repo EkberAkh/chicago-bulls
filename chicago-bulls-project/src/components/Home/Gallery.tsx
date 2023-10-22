@@ -34,7 +34,9 @@ const Gallery = () => {
       <div className="container">
         <h2 className="title">Gallery</h2>
         <div className="gallery-wrapper">
+
           <Carousel  keyBoardControl={true} draggable={true} showDots={true} autoPlay={true} autoPlaySpeed={3000} infinite={true} responsive={responsive}>
+
           <div className="gallery-item">
             <img src={gallery} alt="" />
           </div>

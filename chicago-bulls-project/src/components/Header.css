@@ -8,6 +8,7 @@ header {
   background-color: var(--bg-black);
   z-index: 1001;
 }
+
 .container > .header-items {
   display: flex;
   justify-content: space-between;
@@ -165,3 +166,4 @@ header {
 .hamburger-slide-out {
   animation: slideOut 0.3s forwards;
 }
+
