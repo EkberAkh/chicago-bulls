@@ -73,7 +73,7 @@ const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4', 'sub5', 'sub6'];
 
 
 export const Products: FC = () => {
-    const [openKeys, setOpenKeys] = useState(['sub1']);
+    const [openKeys, setOpenKeys] = useState(['']);
 
     const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
         const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);

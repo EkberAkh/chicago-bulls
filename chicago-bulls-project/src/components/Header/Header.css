@@ -1,4 +1,4 @@
-@import url("../App.css");
+@import url("../../App.css");
 
 header {
   padding-top: 14px;
@@ -174,3 +174,28 @@ header {
 }
 
 .overflow-hidden{overflow: hidden;}
+
+
+.login-register {
+  border-radius: 5px;
+  padding: 9px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: var(--white);
+  font: var(--lexend-10-regular);
+  cursor: pointer;
+  transition: 0.2s all;
+
+  &:hover {
+    border: 1px solid var(--red);
+    transition: 0.2s all;
+  }
+}
+
+.nav-end {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  gap: 10px;
+}

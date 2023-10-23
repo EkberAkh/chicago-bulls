@@ -1,20 +1,22 @@
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Team from "./pages/Team";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import News from "./pages/News";
 import Shop from "./pages/Shop";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { Footer } from "./components";
+import { Header } from "./components";
+import { Register } from "./components"
 
 function App() {
-
+  
+  const location = useLocation();
 
   return (
     <>
-      <Header />
+      { location.pathname !== "/register" && <Header />  }
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,8 +24,9 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/news" element={<News />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
-      <Footer />
+      { location.pathname !== "/register" && <Footer /> }
     </>
   );
 }
