@@ -15,7 +15,6 @@ const Home = () => {
       <News />
       <Gallery />
       <About/>
-     {/* dwkjw */}
     </>
   );
 };
