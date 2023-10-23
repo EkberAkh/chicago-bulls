@@ -144,6 +144,9 @@ header {
   z-index: 150;
   opacity: 0.6;
 }
+.hamburger-screen {
+  transform: translateX(100%);
+} 
 @keyframes slideIn {
   from {
     transform: translateX(100%);
@@ -170,3 +173,4 @@ header {
   animation: slideOut 0.3s forwards;
 }
 
+.overflow-hidden{overflow: hidden;}

@@ -16,13 +16,14 @@ const Header = () => {
   const [close, setClose] = useState(false);
   function hamburgerHandler() {
     setClose(!close);
-  
+
     const hamburgerScreen = document.querySelector(".hamburger-screen");
     const background = document.querySelector(".menu-back");
-  
+    const body = document.querySelector("body");
+    body?.classList.toggle('overflow-hidden');
     // hamburgerScreen?.classList.toggle('menu-slide-in');
-  console.log(close);
- 
+    console.log(close);
+
     if (!close) {
       // Slide out animation
       hamburgerScreen?.classList.remove("hamburger-slide-out"); // Remove the slide-out class
@@ -35,19 +36,21 @@ const Header = () => {
     hamburgerScreen?.classList.toggle("hamburger-visible");
 
     background?.classList.toggle("d-block");
-  
+
     background?.addEventListener("click", () => {
       console.log("background clicked");
       hamburgerScreen?.classList.remove("hamburger-visible");
       background?.classList.remove("d-block");
+      body?.classList.remove('overflow-hidden');
+      hamburgerScreen?.classList.remove("hamburger-slide-in"); // Remove the slide-in class
+      hamburgerScreen?.classList.add("hamburger-slide-out");
       setClose(false);
     });
   }
-  
-  
+
+
   return (
     <>
-      <div className="menu-back d-none"></div>
       <header>
         <div className="container">
           <div className="header-items">
@@ -104,11 +107,12 @@ const Header = () => {
               </Space>
             </div>
 
-    
+
           </div>
         </div>
       </header>
-      <div className="hamburger-screen d-none">
+      <div className="menu-back d-none"></div>
+      <div className="hamburger-screen">
         <nav>
           <ul>
             <li>
