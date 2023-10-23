@@ -1,18 +1,18 @@
 import "./Header.css";
-import logo from "../assets/logo.png";
-import cart from "../assets/shopping-cart-white.png";
-import hamburger from "../assets/hamburger.png";
-import closeMark from "../assets/close.png";
+import logo from "../../assets/logo.png";
+import cart from "../../assets/shopping-cart-white.png";
+import hamburger from "../../assets/hamburger.png";
+import closeMark from "../../assets/close.png";
 
 import { Select, Space } from "antd";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 
 const handleChange = (value: string) => {
   console.log(`selected ${value}`);
 };
 
-const Header = () => {
+export const Header = () => {
   const [close, setClose] = useState(false);
   function hamburgerHandler() {
     setClose(!close);
@@ -93,18 +93,23 @@ const Header = () => {
                 <img src={close ? closeMark : hamburger} alt="hamburger" />
               </button>
               <img className="cart" src={cart} alt="" />
-              <Space wrap>
-                <Select
-                  defaultValue="en"
-                  style={{ width: 60 }}
-                  onChange={handleChange}
-                  options={[
-                    { value: "az", label: "AZ" },
-                    { value: "en", label: "EN" },
-                    { value: "ru", label: "RU" },
-                  ]}
-                />
-              </Space>
+              <div className="nav-end">
+                <Link to="/register">
+                  <button className="login-register">Login/Register</button>
+                </Link>
+                <Space wrap>
+                  <Select
+                    defaultValue="en"
+                    style={{ width: 92 }}
+                    onChange={handleChange}
+                    options={[
+                      { value: "az", label: "AZ" },
+                      { value: "en", label: "EN" },
+                      { value: "ru", label: "RU" },
+                    ]}
+                  />
+                </Space>
+              </div>
             </div>
 
 
@@ -147,5 +152,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;

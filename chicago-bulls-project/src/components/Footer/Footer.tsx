@@ -1,12 +1,11 @@
-import React from 'react';
 import './Footer.css'
-import logo from '../assets/logo.png'; 
-import insta from '../assets/instagram.png'; 
-import fb from '../assets/facebook.png'; 
-import youtube from '../assets/youtube.png'; 
-import twitter from '../assets/twitter.png'; 
+import logo from '../../assets/logo.png'; 
+import insta from '../../assets/instagram.png'; 
+import fb from '../../assets/facebook.png'; 
+import youtube from '../../assets/youtube.png'; 
+import twitter from '../../assets/twitter.png'; 
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer>
     <div className="container">
@@ -85,5 +84,3 @@ const Footer = () => {
   </footer>
   )
 }
-
-export default Footer
