@@ -89,11 +89,11 @@ const Header = () => {
               <button onClick={hamburgerHandler} className="hamburger-menu">
                 <img src={close ? closeMark : hamburger} alt="hamburger" />
               </button>
-              <img src={cart} alt="" />
+              <img className="cart" src={cart} alt="" />
               <Space wrap>
                 <Select
                   defaultValue="en"
-                  style={{ width: 120 }}
+                  style={{ width: 60 }}
                   onChange={handleChange}
                   options={[
                     { value: "az", label: "AZ" },

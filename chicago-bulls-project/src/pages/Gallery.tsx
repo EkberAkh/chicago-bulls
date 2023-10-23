@@ -1,7 +1,13 @@
+import Banner from "../components/Gallery/Banner/Banner"
+import GalleryItems from "../components/Gallery/GalleryItems/GalleryItems"
 
 const Gallery = () => {
   return (
-    <div>Gallery</div>
+    <>
+    <Banner/>
+    <GalleryItems/>
+    </>
+    
   )
 }
 

@@ -4,7 +4,7 @@ import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import { FC } from 'react';
 import { Select, Space, Rate } from 'antd';
-import { Element } from 'react-scroll'
+import { Element } from 'react-scroll';
 import productExample from '../../../assets/product-example.png'
 import blackCart from '../../../assets/shopping-cart-black.png'
 
