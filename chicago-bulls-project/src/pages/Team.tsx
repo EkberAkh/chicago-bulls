@@ -1,10 +1,13 @@
 import { TeamBanner, TeamMembers } from '../components'
+import { AnimatedPage } from '../AnimatedPage'
 
 const Team = () => {
   return (
     <>
-      <TeamBanner/>
-      <TeamMembers/>
+      <AnimatedPage>
+        <TeamBanner />
+        <TeamMembers />
+      </AnimatedPage>
     </>
   )
 }

@@ -7,25 +7,28 @@ import Gallery from "./pages/Gallery";
 import News from "./pages/News";
 import Shop from "./pages/Shop";
 import { Footer, Header, Register, Login } from "./components";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  
+
   const location = useLocation();
 
   return (
     <>
-      { location.pathname !== "/register" && location.pathname !== "/login" && <Header />  }
+      {location.pathname !== "/register" && location.pathname !== "/login" && <Header />}
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      { location.pathname !== "/register" && location.pathname !== "/login" && <Footer /> }
+      <AnimatePresence mode="wait" >
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </AnimatePresence>
+      {location.pathname !== "/register" && location.pathname !== "/login" && <Footer />}
     </>
   );
 }

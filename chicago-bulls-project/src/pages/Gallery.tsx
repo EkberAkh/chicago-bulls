@@ -1,13 +1,16 @@
 import Banner from "../components/Gallery/Banner/Banner"
 import GalleryItems from "../components/Gallery/GalleryItems/GalleryItems"
+import { AnimatedPage } from "../AnimatedPage"
 
 const Gallery = () => {
   return (
     <>
-    <Banner/>
-    <GalleryItems/>
+      <AnimatedPage>
+        <Banner />
+        <GalleryItems />
+      </AnimatedPage>
     </>
-    
+
   )
 }
 
