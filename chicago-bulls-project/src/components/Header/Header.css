@@ -141,7 +141,7 @@ header {
   height: 100%;
   width: 100%;
   background-color: black;
-  z-index: 150;
+  z-index: 1002;
   opacity: 0.6;
 }
 .hamburger-screen {
@@ -182,7 +182,7 @@ header {
   background-color: transparent;
   border: 1px solid #fff;
   color: var(--white);
-  font: var(--lexend-10-regular);
+  font: var(--lexend-12-regular);
   cursor: pointer;
   transition: 0.2s all;
 
