@@ -1,13 +1,16 @@
 
 import { ShopBanner, Categories, Products } from '../components'
+import { AnimatedPage } from '../AnimatedPage'
 
 
 const Shop = () => {
   return (
     <>
-      <ShopBanner/>
-      <Categories/>
-      <Products/>
+      <AnimatedPage>
+        <ShopBanner />
+        <Categories />
+        <Products />
+      </AnimatedPage>
     </>
   )
 }
