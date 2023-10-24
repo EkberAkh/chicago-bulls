@@ -95,12 +95,12 @@ export const Header = () => {
               <img className="cart" src={cart} alt="" />
               <div className="nav-end">
                 <Link to="/register">
-                  <button className="login-register">Login/Register</button>
+                  <button className="login-register">Register</button>
                 </Link>
                 <Space wrap>
                   <Select
                     defaultValue="en"
-                    style={{ width: 92 }}
+                    style={{ width: 68 }}
                     onChange={handleChange}
                     options={[
                       { value: "az", label: "AZ" },

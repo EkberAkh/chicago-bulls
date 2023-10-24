@@ -5,7 +5,7 @@
   --gray-white: #f2f2f2;
   --gray: #525252;
   --bg-black: #010001;
-  --secular-9: 8px "Secular One", sans-serif;
+  --secular-8: 8px "Secular One", sans-serif;
   --secular-10: 10px "Secular One", sans-serif;
   --secular-11: 11px "Secular One", sans-serif;
   --secular-12: 12px "Secular One", sans-serif;
@@ -14,6 +14,7 @@
   --secular-16: 16px "Secular One", sans-serif;
   --secular-18: 18px "Secular One", sans-serif;
   --secular-20: 20px "Secular One", sans-serif;
+  --secular-22: 22px "Secular One", sans-serif;
   --secular-24: 24px "Secular One", sans-serif;
   --secular-28: 28px "Secular One", sans-serif;
   --secular-30: 30px "Secular One", sans-serif;
@@ -36,6 +37,7 @@
   --lexend-16-regular: 16px "Lexend", sans-serif;
   --lexend-18-regular: 18px "Lexend", sans-serif;
   --lexend-20-regular: 20px "Lexend", sans-serif;
+  --lexend-24-regular: 24px "Lexend", sans-serif;
 }
 
 body {

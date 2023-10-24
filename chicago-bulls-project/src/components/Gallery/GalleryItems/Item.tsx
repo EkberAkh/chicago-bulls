@@ -1,17 +1,30 @@
 import React from "react";
 import "./Item.css";
-
+import gallery_icon from "../../../assets/gallery-icon.png";
+import { Link } from "react-router-dom";
 type ItemImg = {
   itemImg: string;
+  item_title: string;
+  item_content: string;
+  row_reverse: boolean;
 };
-const Item: React.FC<ItemImg> = ({ itemImg }) => {
+const Item: React.FC<ItemImg> = ({ itemImg, item_title, item_content,row_reverse }) => {
   return (
     <div className="item">
-      <div className="item-inner">
+      <div className={row_reverse ? "item-inner item-inner-reverse" : "item-inner" }>
         <div className="item-left">
           <img src={itemImg} alt="item-img" />
         </div>
-        <div className="item-right"></div>
+        <div className="item-right">
+          <div className="right-inner">
+            <div className="title">
+              <img src={gallery_icon} alt="gallery-icon" />
+              <h2>{item_title}</h2>
+            </div>
+            <p className="content">{item_content}</p>
+          <Link className="link" to='/'>SEE MORE</Link>
+          </div>
+        </div>
       </div>
     </div>
   );
