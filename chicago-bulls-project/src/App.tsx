@@ -6,9 +6,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import News from "./pages/News";
 import Shop from "./pages/Shop";
-import { Footer } from "./components";
-import { Header } from "./components";
-import { Register } from "./components"
+import { Footer, Header, Register, Login } from "./components";
 
 function App() {
   
@@ -16,7 +14,7 @@ function App() {
 
   return (
     <>
-      { location.pathname !== "/register" && <Header />  }
+      { location.pathname !== "/register" && location.pathname !== "/login" && <Header />  }
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,8 +23,9 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      { location.pathname !== "/register" && <Footer /> }
+      { location.pathname !== "/register" && location.pathname !== "/login" && <Footer /> }
     </>
   );
 }
