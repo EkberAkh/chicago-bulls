@@ -45,7 +45,7 @@ i18n.use(initReactI18next).init({
         KIDS: "UŞAQLAR",
         BABY: "KÖRPƏ",
         BIGTALL: "BÖYÜK & HÜNDÜR",
-        JERSEY: "KİMANO",
+        JERSEY: "FORMA",
         TSHIRT: "KÖYNƏK",
         SWEATSHIRTS: "SVİTER",
         HATS: "ŞLYAPA",

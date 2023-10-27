@@ -9,29 +9,20 @@ import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-
-
 export const Header = () => {
   const { t, i18n } = useTranslation();
   const [close, setClose] = useState(false);
-  const [language, setLanguage] = useState( localStorage.getItem("language") ||"en");
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "en"
+  );
   const handleChange = (value: string) => {
-    // console.log(`selected ${value}`);
-    if ( value === "az" ) {
-      i18n.changeLanguage("az");
-      setLanguage(value);
-    } else if ( value === "en") {
-      i18n.changeLanguage("en");
-      setLanguage(value);
-    } else if ( value === "ru") {
-      console.log("ya zdes aquerets");
-      setLanguage(value);
-    }
+    i18n.changeLanguage(value);
+    setLanguage(value);
   };
 
-  useEffect(()=> {
-    localStorage.setItem("language", language)
-  }, [language])
+  useEffect(() => {
+    localStorage.setItem("language", language);
+  }, [language]);
 
   useEffect(() => {
     i18n.changeLanguage(language);
@@ -43,7 +34,7 @@ export const Header = () => {
     const hamburgerScreen = document.querySelector(".hamburger-screen");
     const background = document.querySelector(".menu-back");
     const body = document.querySelector("body");
-    body?.classList.toggle('overflow-hidden');
+    body?.classList.toggle("overflow-hidden");
     // hamburgerScreen?.classList.toggle('menu-slide-in');
     console.log(close);
 
@@ -64,13 +55,12 @@ export const Header = () => {
       console.log("background clicked");
       hamburgerScreen?.classList.remove("hamburger-visible");
       background?.classList.remove("d-block");
-      body?.classList.remove('overflow-hidden');
+      body?.classList.remove("overflow-hidden");
       hamburgerScreen?.classList.remove("hamburger-slide-in"); // Remove the slide-in class
       hamburgerScreen?.classList.add("hamburger-slide-out");
       setClose(false);
     });
-  };
-
+  }
 
   return (
     <>
@@ -89,24 +79,23 @@ export const Header = () => {
                 </li>
                 <li>
                   <NavLink id="team" className="link" to="/team">
-                  {t("TEAM")}
+                    {t("TEAM")}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink id="gallery" className="link" to="/gallery">
-                  {t("GALLERY")}
+                    {t("GALLERY")}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink id="news" className="link" to="/news">
-                  {t("NEWS")}
+                    {t("NEWS")}
                   </NavLink>
                 </li>
 
-
                 <li>
                   <NavLink id="shop" className="link" to="/shop">
-                  {t("SHOP")}
+                    {t("SHOP")}
                   </NavLink>
                 </li>
               </ul>
@@ -126,16 +115,13 @@ export const Header = () => {
                     style={{ width: 68 }}
                     onChange={handleChange}
                     options={[
-                      { value: "az", label: "AZ"},
-                      { value: "en", label: "EN"},
-                      { value: "ru", label: "RU"},
+                      { value: "az", label: "AZ" },
+                      { value: "en", label: "EN" },
                     ]}
                   />
                 </Space>
               </div>
             </div>
-
-
           </div>
         </div>
       </header>
@@ -145,28 +131,28 @@ export const Header = () => {
           <ul>
             <li>
               <NavLink id="home" className="link" to="/">
-              {t("HOME")}
+                {t("HOME")}
               </NavLink>
             </li>
             <li>
               <NavLink id="team" className="link" to="/team">
-              {t("TEAM")}
+                {t("TEAM")}
               </NavLink>
             </li>
             <li>
               <NavLink id="gallery" className="link" to="/gallery">
-              {t("GALLERY")}
+                {t("GALLERY")}
               </NavLink>
             </li>
             <li>
               <NavLink id="news" className="link" to="/news">
-              {t("NEWS")}
+                {t("NEWS")}
               </NavLink>
             </li>
 
             <li>
               <NavLink id="shop" className="link" to="/shop">
-              {t("SHOP")}
+                {t("SHOP")}
               </NavLink>
             </li>
           </ul>
