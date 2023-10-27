@@ -10,14 +10,16 @@ import Demar from '../../../assets/demar-derozan.png'
 import Carlik from '../../../assets/carlik-jones.png'
 import Terry from '../../../assets/terry-taylor.png'
 import Patrick from '../../../assets/patrick-williams.png'
+import { useTranslation } from 'react-i18next'
 
 import './TeamMembers.css'
 
 export const TeamMembers = () => {
+    const {t} = useTranslation();
     return (
         <div className="container">
             <div className="main">
-                <h3>TEAM</h3>
+                <h3>{t("TEAM")}</h3>
                 <div className="members">
                     <div className="member-item">
                         <h1>0</h1>

@@ -3,9 +3,11 @@ import gallery1 from '../../assets/gallery1.png';
 import gallery2 from '../../assets/gallery2.png';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import './Gallery.css'
+import './Gallery.css';
+import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
+  const {t} = useTranslation();
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -32,7 +34,7 @@ const Gallery = () => {
   return (
     <section className="gallery">
       <div className="container">
-        <h2 className="title">Gallery</h2>
+        <h2 className="title">{t("GALLERY")}</h2>
         <div className="gallery-wrapper">
 
           <Carousel  keyBoardControl={true} draggable={true} showDots={true} autoPlay={true} autoPlaySpeed={3000} infinite={true} responsive={responsive}>

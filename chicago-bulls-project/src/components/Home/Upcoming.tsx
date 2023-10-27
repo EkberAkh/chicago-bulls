@@ -9,8 +9,10 @@ import bucks from "../../assets/bucks.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "./Card";
+import { useTranslation } from 'react-i18next';
 
 const Upcoming = () => {
+  const {t} = useTranslation();
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -36,7 +38,7 @@ const Upcoming = () => {
   return (
     <section className="upcoming">
     <div className="container">
-      <h2 className="title">Upcoming games</h2>
+      <h2 className="title">{t("Upcoming")}</h2>
       <div className="card-section">
     
         <div className="cards">

@@ -6,14 +6,33 @@ import closeMark from "../../assets/close.png";
 
 import { Select, Space } from "antd";
 import { NavLink, Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
+
 
 export const Header = () => {
+  const { t, i18n } = useTranslation();
   const [close, setClose] = useState(false);
+  const [language, setLanguage] = useState( localStorage.getItem("language") ||"en");
+  const handleChange = (value: string) => {
+    // console.log(`selected ${value}`);
+    if ( value === "az" ) {
+      i18n.changeLanguage("az");
+      setLanguage(value);
+    } else if ( value === "en") {
+      i18n.changeLanguage("en");
+      setLanguage(value);
+    } else if ( value === "ru") {
+      console.log("ya zdes aquerets");
+      setLanguage(value);
+    }
+  };
+
+  useEffect(()=> {
+    localStorage.setItem("language", language)
+  }, [language])
+
   function hamburgerHandler() {
     setClose(!close);
 
@@ -46,7 +65,9 @@ export const Header = () => {
       hamburgerScreen?.classList.add("hamburger-slide-out");
       setClose(false);
     });
-  }
+  };
+
+  localStorage.setItem("language", "en");
 
 
   return (
@@ -61,29 +82,29 @@ export const Header = () => {
               <ul>
                 <li>
                   <NavLink id="home" className="link" to="/">
-                    Home
+                    {t("HOME")}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink id="team" className="link" to="/team">
-                    Team
+                  {t("TEAM")}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink id="gallery" className="link" to="/gallery">
-                    Gallery
+                  {t("GALLERY")}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink id="news" className="link" to="/news">
-                    News
+                  {t("NEWS")}
                   </NavLink>
                 </li>
 
 
                 <li>
                   <NavLink id="shop" className="link" to="/shop">
-                    Shop
+                  {t("SHOP")}
                   </NavLink>
                 </li>
               </ul>
@@ -95,17 +116,17 @@ export const Header = () => {
               <img className="cart" src={cart} alt="" />
               <div className="nav-end">
                 <Link to="/register">
-                  <button className="login-register">Register</button>
+                  <button className="login-register">{t("Register")}</button>
                 </Link>
                 <Space wrap>
                   <Select
-                    defaultValue="en"
+                    defaultValue={language}
                     style={{ width: 68 }}
                     onChange={handleChange}
                     options={[
-                      { value: "az", label: "AZ" },
-                      { value: "en", label: "EN" },
-                      { value: "ru", label: "RU" },
+                      { value: "az", label: "AZ"},
+                      { value: "en", label: "EN"},
+                      { value: "ru", label: "RU"},
                     ]}
                   />
                 </Space>
@@ -122,28 +143,28 @@ export const Header = () => {
           <ul>
             <li>
               <NavLink id="home" className="link" to="/">
-                Home
+              {t("HOME")}
               </NavLink>
             </li>
             <li>
               <NavLink id="team" className="link" to="/team">
-                Team
+              {t("TEAM")}
               </NavLink>
             </li>
             <li>
               <NavLink id="gallery" className="link" to="/gallery">
-                Gallery
+              {t("GALLERY")}
               </NavLink>
             </li>
             <li>
               <NavLink id="news" className="link" to="/news">
-                News
+              {t("NEWS")}
               </NavLink>
             </li>
 
             <li>
               <NavLink id="shop" className="link" to="/shop">
-                Shop
+              {t("SHOP")}
               </NavLink>
             </li>
           </ul>

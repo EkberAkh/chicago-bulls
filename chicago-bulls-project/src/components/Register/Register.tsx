@@ -2,8 +2,10 @@ import logo from "./../../assets/logo.png"
 import { Link, NavLink } from "react-router-dom"
 import "./Register.css"
 import { AnimatedPage } from "../../AnimatedPage"
+import { useTranslation } from "react-i18next"
 
 export const Register = () => {
+    const {t} = useTranslation();
     return (
         <>
             <AnimatedPage>
@@ -12,32 +14,32 @@ export const Register = () => {
                     <form>
                         <div className="input" >
                             <div className="labels">
-                                <label htmlFor="username">Name</label>
+                                <label htmlFor="username">{t("Name")}</label>
                                 <NavLink className="register-input" to="/">
-                                    Go Home
+                                {t("GoHome")}
                                 </NavLink>
                             </div>
-                            <input type="text" id="username" placeholder="Your Name" />
+                            <input required type="text" id="username" placeholder={t("YourName")} />
                         </div>
                         <div className="input" >
-                            <label htmlFor="surname">Surname</label>
-                            <input type="text" id="surname" placeholder="Your Surname" />
+                            <label htmlFor="surname">{t("Surname")}</label>
+                            <input required type="text" id="surname" placeholder={t("YourSurname")} />
                         </div>
                         <div className="input" >
                             <label htmlFor="email">Email</label>
-                            <input type="email" id="email" placeholder="youremail@gmail.com" />
+                            <input type="email" id="email" placeholder="abcdemail@gmail.com" />
                         </div>
                         <div className="input" >
-                            <label htmlFor="phone">Phone</label>
+                            <label htmlFor="phone">{t("Phone")}</label>
                             <input type="tel" id="phone" placeholder="+994777777777" />
                         </div>
                         <div className="input" >
-                            <label htmlFor="username">Password</label>
-                            <input type="password" id="password" />
+                            <label htmlFor="username">{t("Password")}</label>
+                            <input required type="password" id="password" />
                         </div>
                         <div className="register-btn">
-                            <button type="submit">Register</button>
-                            <Link to="/login" id="login" >Have an account?</Link>
+                            <button type="submit">{t("Register")}</button>
+                            <Link to="/login" id="login" >{t("HaveAccount")}</Link>
                         </div>
                     </form>
                 </div>

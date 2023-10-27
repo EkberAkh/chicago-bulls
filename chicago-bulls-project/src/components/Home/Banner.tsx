@@ -1,6 +1,8 @@
 import './Banner.css';
 import banner from '../../assets/banner.png';
+import { useTranslation } from 'react-i18next';
 const Banner = () => {
+  const { t } = useTranslation();
   return (
     <section className="banner">
       <img className='banner-img' src={banner} alt="" />
@@ -8,10 +10,9 @@ const Banner = () => {
       <div className="banner-inner">
         <div className="banner-left">
           <p>
-            Get ready to be amazed, Bulls coming on <span>October 8</span>{" "}
-            on your way!
+          {t("HomeBanner")}
           </p>
-          <button type="button">BUY TICKET</button>
+          <button type="button">{t("TicketButton")}</button>
         </div>
         <div className="banner-right"></div>
       </div>

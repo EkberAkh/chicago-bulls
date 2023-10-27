@@ -2,6 +2,7 @@ import React from "react";
 import "./Item.css";
 import gallery_icon from "../../../assets/gallery-icon.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 type ItemImg = {
   itemImg: string;
   item_title: string;
@@ -9,6 +10,7 @@ type ItemImg = {
   row_reverse: boolean;
 };
 const Item: React.FC<ItemImg> = ({ itemImg, item_title, item_content,row_reverse }) => {
+  const {t} = useTranslation();
   return (
     <div className="item">
       <div className={row_reverse ? "item-inner item-inner-reverse" : "item-inner" }>
@@ -22,7 +24,7 @@ const Item: React.FC<ItemImg> = ({ itemImg, item_title, item_content,row_reverse
               <h2>{item_title}</h2>
             </div>
             <p className="content">{item_content}</p>
-          <Link className="link" to='/'>SEE MORE</Link>
+          <Link className="link" to='/'>{t("SeeMore")}</Link>
           </div>
         </div>
       </div>
