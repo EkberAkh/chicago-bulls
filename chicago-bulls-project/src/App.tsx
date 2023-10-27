@@ -9,26 +9,32 @@ import Shop from "./pages/Shop";
 import { Footer, Header, Register, Login } from "./components";
 import { AnimatePresence } from "framer-motion";
 
-function App() {
 
+function App() {
   const location = useLocation();
 
   return (
     <>
-      {location.pathname !== "/register" && location.pathname !== "/login" && <Header />}
+      {location.pathname !== "/register" && location.pathname !== "/login" && (
+        <Header />
+      )}
 
-      <AnimatePresence mode="wait" >
+      <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Home />} />
+
           <Route path="/team" element={<Team />} />
           <Route path="/gallery" element={<Gallery />} />
+
           <Route path="/news" element={<News />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </AnimatePresence>
-      {location.pathname !== "/register" && location.pathname !== "/login" && <Footer />}
+      {location.pathname !== "/register" && location.pathname !== "/login" && (
+        <Footer />
+      )}
     </>
   );
 }

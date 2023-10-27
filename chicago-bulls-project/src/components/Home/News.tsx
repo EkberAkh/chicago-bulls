@@ -1,13 +1,14 @@
-import React from 'react';
 import './News.css';
 import newsImg from '../../assets/news.png';
 import newsImg1 from '../../assets/news(1).png';
 import newsImg2 from '../../assets/news(2).png';
+import { useTranslation } from 'react-i18next';
 
 const News = () => {
+  const {t} = useTranslation();
   return (
     <section className="news">
-        <h2 className="title">Top news</h2>
+        <h2 className="title">{t("TopNews")}</h2>
         <div className="container">
           <div className="news-wrapper">
             <div className="news-card">
@@ -15,17 +16,17 @@ const News = () => {
                 <img src={newsImg} alt="" />
               </div>
               <div className="news-title">
-                <b>Remembering Pau Gasol's time as a Chicago Bull as he prepares to enter Basketball Hall of Fame.</b>
+                <b>{t("NewsHeader1")}</b>
               </div>
               <div className="news-content">
-                <p>Gasol was an All-Star in both his Bulls seasons, his first All-Star selections in four years, started the 2015 All-Star game opposite his brother Marc in an historic NBA first, was All-NBA, scored a career best 46 points, led the league in double-doubles and became the fourth player in league history older than 35 with multiple triple doubles in one season.</p>
+                <p>{t("NewsMain1")}</p>
               </div>
               <div className="news-end">
                 <span className="date">
-                Sep 17, 2023 • 1:10 PM
+                {t("NewsDate")}
                 </span>
                 <span className="views">
-                20k views
+                20{t("NewsView")}
                 </span>
               </div>
             </div>
@@ -34,17 +35,17 @@ const News = () => {
                 <img src={newsImg1} alt="" />
               </div>
               <div className="news-title">
-                <b>Remembering Pau Gasol's time as a Chicago Bull as he prepares to enter Basketball Hall of Fame.</b>
+                <b>{t("NewsHeader1")}</b>
               </div>
               <div className="news-content">
-                <p>Gasol was an All-Star in both his Bulls seasons, his first All-Star selections in four years, started the 2015 All-Star game opposite his brother Marc in an historic NBA first, was All-NBA, scored a career best 46 points, led the league in double-doubles and became the fourth player in league history older than 35 with multiple triple doubles in one season.</p>
+                <p>{t("NewsMain1")}</p>
               </div>
               <div className="news-end">
                 <span className="date">
-                Sep 17, 2023 • 1:10 PM
+                {t("NewsDate")}
                 </span>
                 <span className="views">
-                20k views
+                20{t("NewsView")}
                 </span>
               </div>
             </div>
@@ -53,17 +54,17 @@ const News = () => {
                 <img src={newsImg2} alt="" />
               </div>
               <div className="news-title">
-                <b>Remembering Pau Gasol's time as a Chicago Bull as he prepares to enter Basketball Hall of Fame.</b>
+                <b>{t("NewsHeader1")}</b>
               </div>
               <div className="news-content">
-                <p>Gasol was an All-Star in both his Bulls seasons, his first All-Star selections in four years, started the 2015 All-Star game opposite his brother Marc in an historic NBA first, was All-NBA, scored a career best 46 points, led the league in double-doubles and became the fourth player in league history older than 35 with multiple triple doubles in one season.</p>
+                <p>{t("NewsMain1")}</p>
               </div>
               <div className="news-end">
                 <span className="date">
-                Sep 17, 2023 • 1:10 PM
+                {t("NewsDate")}
                 </span>
                 <span className="views">
-                20k views
+                20{t("NewsView")}
                 </span>
               </div>
             </div>

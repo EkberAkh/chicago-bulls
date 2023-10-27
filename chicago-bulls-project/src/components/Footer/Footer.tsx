@@ -4,8 +4,10 @@ import insta from '../../assets/instagram.png';
 import fb from '../../assets/facebook.png'; 
 import youtube from '../../assets/youtube.png'; 
 import twitter from '../../assets/twitter.png'; 
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
+  const {t} = useTranslation();
   return (
     <footer>
     <div className="container">
@@ -21,64 +23,64 @@ export const Footer = () => {
           </div>
         </div>
         <div className="team footer-item">
-          <h3 className="title">team</h3>
+          <h3 className="title">{t("TEAM")}</h3>
           <ul>
             
-            <li>Team Roster</li>
-            <li>Stats</li>
-            <li>Team Leaders</li>
-            <li>Staff Directory</li>
-            <li>Career Opportunities</li>
+            <li>{t("TeamRoster")}</li>
+            <li>{t("Stats")}</li>
+            <li>{t("TeamLeaders")}</li>
+            <li>{t("StaffDirectory")}</li>
+            <li>{t("CareerOpportunities")}</li>
           </ul>
         </div>
         <div className="ticket footer-item">
-        <h3 className="title">ticket</h3>
+        <h3 className="title">{t("TICKET")}</h3>
 
           <ul>
 
-            <li>Click Tix</li>
-            <li>Schedule</li>
-            <li>Season Tickets</li>
-            <li>Single Tickets</li>
-            <li>Group Tickets</li>
-            <li>Family Ticket Packs</li>
-            <li>Student Pass</li>
-            <li>Print Schedule</li>
-            <li>Windy City</li>
+            <li>{t("ClickTix")}</li>
+            <li>{t("Schedule")}</li>
+            <li>{t("SeasonTickets")}</li>
+            <li>{t("SingleTickets")}</li>
+            <li>{t("GroupTickets")}</li>
+            <li>{t("FamilyTicketPAcks")}</li>
+            <li>{t("StudentPass")}</li>
+            <li>{t("PrintSchedule")}</li>
+            <li>{t("WindyCity")}</li>
           </ul>
         </div>
         <div className="empty"></div>
         <div className="shop footer-item">
-        <h3 className="title">shop</h3>
+        <h3 className="title">{t("SHOP")}</h3>
 
           <ul>
-            <li>Jerseys</li>
-            <li>Hats</li>
-            <li>T‑Shirts</li>
-            <li>Kids</li>
-            <li>Madhouse Team Store</li>
+            <li>{t("JERSEY")}</li>
+            <li>{t("HATS")}</li>
+            <li>{t("TSHIRT")}</li>
+            <li>{t("KIDS")}</li>
+            <li>{t("MadhouseTeamStore")}</li>
           
           </ul>
         </div>
         <div className="footer-news footer-item">
-        <h3 className="title">news</h3>
+        <h3 className="title">{t("NEWS")}</h3>
 
           <ul>
             <li>Sam Smith</li>
-            <li>Chuck Checks In</li>
-            <li>Partner News</li>
-            <li>Injury Report</li>
-            <li>Game Notes</li>
-            <li>2022‑23 Media Guidee</li>
+            <li>{t("ChuckChecksIn")}</li>
+            <li>{t("PartnerNews")}</li>
+            <li>{t("InjuryReport")}</li>
+            <li>{t("GameNotes")}</li>
+            <li>2022‑23 {t("Media Guidee")}</li>
           
           </ul>
         </div>
       </div>
       <div className="footer-end">
-        <p>Copyright © 2023 All rights reserved.</p>
-        <p>Privacy Policy | Terms of Use | Customer Support | Accessibility and Closed Captions | Your Privacy Choices</p>
-        <p>Cookie Policy | EEA/UK Privacy Statement | Brazil Privacy Statement | California Consumer Privacy Statement | Colorado Consumer Privacy Statement</p>
-        <p>If you are having difficulty accessing any content on this website, please visit our Accessibility page.</p>
+        <p>{t("Copyright")}</p>
+        <p>{t("Footer1")}</p>
+        <p>{t("Footer2")}</p>
+        <p>{t("Footer3")}</p>
       </div>
     </div>
   </footer>

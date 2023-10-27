@@ -1,11 +1,13 @@
 import './About.css';
 import about_img from "../../assets/about.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const {t} = useTranslation();
   return (
     <section className="about">
-        <h2 className="title">About us</h2>
+        <h2 className="title">{t("AboutUs")}</h2>
         <div className="container">
           <div className="about-wrapper">
 
@@ -16,29 +18,15 @@ const About = () => {
             <div className="paragraphs">
 
             <p>
-              The Chicago Bulls are an American professional basketball team
-              based in Chicago. The Bulls compete in the National Basketball
-              Association (NBA) as a member of the league's Eastern Conference
-              Central Division. The team was founded on January 16, 1966, and
-              played its first game during the 1966–67 NBA season. The Bulls
-              play their home games at the United Center, an arena on Chicago's
-              West Side.
+            {t("AboutMain1")}
             </p>
             <p>
-              The Bulls saw their greatest success during the 1990s when they
-              played a major part in popularizing the NBA worldwide. They are
-              known for having one of the NBA's greatest dynasties, winning six
-              NBA championships between 1991 and 1998 with two three-peats. All
-              six of their championship teams were led by Hall of Famers Michael
-              Jordan, Scottie Pippen, and coach Phil Jackson. The Bulls are the
-              only NBA franchise to win multiple championships while never
-              losing an NBA Finals series in their history.
+            {t("AboutMain2")}
             </p>
             <p>
-              The Bulls won 72 games during the 1995–96 season, setting an NBA
-              record.
+            {t("AboutMain3")}
             </p>
-            <Link className='link' to="/news">See more</Link>
+            <Link className='link' to="/news">{t("SeeMore")}</Link>
             </div>
           </div>
           </div>

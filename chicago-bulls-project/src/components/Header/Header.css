@@ -108,7 +108,7 @@ header {
   font: var(--secular-24);
 }
 .hamburger-screen > nav > ul > li {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .hamburger-screen > nav > ul > li > .link {
   text-decoration: none;
@@ -124,6 +124,9 @@ header {
   }
   .container > .header-items > .header-end > .hamburger-menu {
     display: block;
+  }
+  .hamburger-screen > nav > ul > li > .link {
+    font-size: 14px;
   }
 }
 
