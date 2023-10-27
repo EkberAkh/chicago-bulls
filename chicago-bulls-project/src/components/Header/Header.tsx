@@ -33,6 +33,10 @@ export const Header = () => {
     localStorage.setItem("language", language)
   }, [language])
 
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, []);
+
   function hamburgerHandler() {
     setClose(!close);
 
@@ -66,8 +70,6 @@ export const Header = () => {
       setClose(false);
     });
   };
-
-  localStorage.setItem("language", "en");
 
 
   return (
