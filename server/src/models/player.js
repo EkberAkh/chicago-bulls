@@ -21,13 +21,6 @@ const Player = sequelize.define(
   {
     timestamps: true,
     paranoid: true,
-    indexes: [
-      {
-        name: "users_email_index",
-        using: "BTREE",
-        fields: ["email"],
-      },
-    ],
   }
 );
 

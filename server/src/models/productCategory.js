@@ -17,10 +17,6 @@ const ProductCategory = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    parentId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
   },
   {
     timestamps: true,

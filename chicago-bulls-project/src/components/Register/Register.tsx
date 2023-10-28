@@ -21,18 +21,12 @@ export const Register = () => {
                             </div>
                             <input required type="text" id="username" placeholder={t("YourName")} />
                         </div>
-                        <div className="input" >
-                            <label htmlFor="surname">{t("Surname")}</label>
-                            <input required type="text" id="surname" placeholder={t("YourSurname")} />
-                        </div>
+                      
                         <div className="input" >
                             <label htmlFor="email">Email</label>
                             <input type="email" id="email" placeholder="abcdemail@gmail.com" />
                         </div>
-                        <div className="input" >
-                            <label htmlFor="phone">{t("Phone")}</label>
-                            <input type="tel" id="phone" placeholder="+994777777777" />
-                        </div>
+             
                         <div className="input" >
                             <label htmlFor="username">{t("Password")}</label>
                             <input required type="password" id="password" />

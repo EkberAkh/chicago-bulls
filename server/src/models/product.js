@@ -1,10 +1,15 @@
-const { DataTypes } = require("sequelize");
+const { Sequelize,DataTypes } = require("sequelize");
 
 const sequelize = require("../database/index");
 
 const Product = sequelize.define(
   "Product",
   {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: Sequelize.literal("uuid_generate_v4()"),
+      primaryKey: true,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
