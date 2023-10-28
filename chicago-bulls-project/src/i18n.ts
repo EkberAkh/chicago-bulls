@@ -20,6 +20,7 @@ i18n.use(initReactI18next).init({
         TicketButton: "BİLET AL",
         Register: "Qeydiyyat",
         Login: "Giriş",
+        EnterPassword: "Şifrənizi daxil edin",
         Upcoming: "YAXINDAKI OYUNLAR",
         TopNews: "ƏSAS XƏBƏRLƏR",
         AboutUs: "Haqqımızda",
@@ -124,6 +125,20 @@ i18n.use(initReactI18next).init({
         AboutMain3: `Bulls 1995-1996 mövsümündə 72 oyun qazanaraq NBA-nın sahibi oldu
         rekord.`,
       },
+      validations: {
+        usernameRequired: "İstifadəçi adı tələb olunur",
+        emailRequired: "Email tələb olunur",
+        passwordRequired: "Parol tələb olunur",
+        tooShort: "Çox Qısadır!",
+        tooLong: "Çox Uzundur!",
+        emailRegex: "Zəhmət olmasa düzgün e-poçt ünvanı daxil edin!",
+        passwordMin: "Şifrəniz zəifdir!",
+        passwordRegex: `Parolunuz ən azı aşağıdakıları ehtiva etməlidir:
+        - bir böyük hərf (ABC)
+        - bir kiçik hərf (abc)
+        - bir nömrə (123)
+        -bir xüsusi simvol(.@?)`
+      }
     },
     en: {
       translation: {
@@ -142,6 +157,7 @@ i18n.use(initReactI18next).init({
         TicketButton: "BUY TICKET",
         Register: "Register",
         Login: "Login",
+        EnterPassword: "Enter password",
         Upcoming: "UPCOMING GAMES",
         TopNews: "TOP NEWS",
         AboutUs: "About Us",
@@ -246,6 +262,20 @@ i18n.use(initReactI18next).init({
         AboutMain3: `The Bulls won 72 games during the 1995–96 season, setting an NBA
         record.`,
       },
+      validations: {
+        usernameRequired: "Username is required",
+        emailRequired: "Email is required",
+        passwordRequired: "Password is required",
+        tooShort: "Too Short!",
+        tooLong: "Too Long!",
+        emailRegex: "Please enter a valid email address!",
+        passwordMin: "Your password is weak!",
+        passwordRegex: `Your password must contain at least: 
+        -one uppercase letter(ABC)
+        -one lowercase letter(abc) 
+        -one number(123) 
+        -one special character(.@?)`
+      }
     },
   },
   lng: "en",
