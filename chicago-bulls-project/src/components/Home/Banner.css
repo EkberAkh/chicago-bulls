@@ -19,7 +19,7 @@
 
   > p {
     text-transform: uppercase;
-    font: var(--secular-56);
+    font: var(--secular-48);
     color: var(--white);
     > span {
       color: var(--black);
@@ -45,7 +45,7 @@
   .banner > .container > .banner-inner > .banner-left {
     > p {
       text-transform: uppercase;
-      font: var(--secular-44);
+      font: var(--secular-36);
       color: var(--white);
     }
     > button {
@@ -57,7 +57,7 @@
 @media (max-width: 995px) {
   .banner > .container > .banner-inner > .banner-left {
     > p {
-      font: var(--secular-36);
+      font: var(--secular-30);
     }
     > button {
       font: var(--secular-20);
@@ -68,7 +68,7 @@
 @media (max-width: 776px) {
   .banner > .container > .banner-inner > .banner-left {
     > p {
-      font: var(--secular-30);
+      font: var(--secular-28);
     }
     > button {
       font: var(--secular-16);
@@ -82,7 +82,7 @@
   }
   .banner > .container > .banner-inner > .banner-left {
     > p {
-      font: var(--secular-24);
+      font: var(--secular-22);
     }
     > button {
       font: var(--secular-12);
@@ -93,7 +93,7 @@
 @media (max-width: 512px) {
   .banner > .container > .banner-inner > .banner-left {
     > p {
-      font: var(--secular-20);
+      font: var(--secular-18);
     }
     > button {
       font: var(--secular-12);
@@ -103,11 +103,11 @@
 
 @media (max-width: 450px) {
   .banner > .container > .banner-inner {
-    padding:0;
+    padding-top:20px;
   }
   .banner > .container > .banner-inner > .banner-left {
     > p {
-      font: var(--secular-14);
+      font: var(--secular-12);
     }
     > button {
       font: var(--secular-12);
