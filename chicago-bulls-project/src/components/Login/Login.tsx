@@ -19,7 +19,7 @@ export const Login = () => {
           <form>
             <div className="input">
               <div className="labels">
-                <label htmlFor="email">{t("EmailOrPhone")}</label>
+                <label htmlFor="email">Email</label>
                 <NavLink className="login-input" to="/">
                   {t("GoHome")}
                 </NavLink>
@@ -45,7 +45,7 @@ export const Login = () => {
                     size="sm"
                     onClick={handleClick}
                   >
-                    {show ? "Hide" : "Show"}
+                    {show ? t("hide") : t("show")}
                   </Button>
                 </InputRightElement>
               </InputGroup>
