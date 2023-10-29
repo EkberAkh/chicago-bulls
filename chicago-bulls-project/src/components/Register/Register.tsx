@@ -51,7 +51,6 @@ export const Register = () => {
                   </NavLink>
                 </div>
                 <input
-                  required
                   type="text"
                   id="username"
                   {...methods.register("username")}
@@ -59,7 +58,7 @@ export const Register = () => {
                 />
                 {methods.formState.errors.username && (
                   <FormErrorMessage id="errorinput">
-                    {methods.formState.errors.username?.message}
+                    {t(methods.formState.errors.username?.message!)}
                   </FormErrorMessage>
                 )}
               </FormControl>
@@ -76,7 +75,7 @@ export const Register = () => {
                 />
                 {methods.formState.errors.email && (
                   <FormErrorMessage id="errorinput">
-                    {methods.formState.errors.email?.message}
+                    {t(methods.formState.errors.email?.message!)}
                   </FormErrorMessage>
                 )}
               </FormControl>
@@ -96,13 +95,13 @@ export const Register = () => {
                   />
                   <InputRightElement marginRight="2px" width="4.5rem">
                     <Button id="passbtn" h="1.75rem" size="sm" onClick={handleClick}>
-                      {show ? "Hide" : "Show"}
+                      {show ? t("hide") : t("show")}
                     </Button>
                   </InputRightElement>
                 </InputGroup>
                 {methods.formState.errors.password && (
                   <FormErrorMessage id="errorinput">
-                    {methods.formState.errors.password?.message}
+                    {t(methods.formState.errors.password?.message!)}
                   </FormErrorMessage>
                 )}
               </FormControl>

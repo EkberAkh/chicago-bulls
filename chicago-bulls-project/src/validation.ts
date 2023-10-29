@@ -3,30 +3,25 @@ import { yupResolver } from "@hookform/resolvers/yup"
 
 const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
 const passwordRegex =
-/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])([A-Za-z\d@$!%*?&.]{8,})$/
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])([A-Za-z\d@$!%*?&.]{8,})$/;
 
 
 export const validationSchema = object().shape({
   username: string()
-    .min(3, "Too Short!")
-    .max(30, "Too Long!")
-    .required("Username is required"),
+    .min(3, "validations.tooShort")
+    .max(30, "validations.tooLong")
+    .required("validations.usernameRequired"),
   email: string()
-    .min(5, "Too Short!")
-    .max(50, "Too Long!")
-    .matches(emailRegex, "Please enter a valid email address")
-    .required("Email is required"),
+    .min(5, "validations.tooShort")
+    .max(50, "validations.tooLong")
+    .matches(emailRegex, "validations.emailRegex")
+    .required("validations.emailRequired"),
   password: string()
-    .min(8, "Please enter a strong password")
+    .min(8, "validations.passwordMin")
     .matches(
-      passwordRegex,
-      `Your password must contain at least: 
-      -one uppercase letter(ABC)
-      -one lowercase letter(abc) 
-      -one number(123) 
-      -one special character(.@?)`
+      passwordRegex, "validations.passwordRegex"
     )
-    .required("Password is required"),
+    .required("validations.passwordRequired"),
 });
 
 export const resolver = yupResolver(validationSchema)

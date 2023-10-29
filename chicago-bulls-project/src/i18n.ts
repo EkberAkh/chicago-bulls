@@ -34,11 +34,13 @@ i18n.use(initReactI18next).init({
         NewsView: "m baxış",
         NewsDate: "17 Sentyabr 2023 • 01:10",
         GalleryHeader1: "Bütün Yayı Buğalar: Titan Divarları",
-        GalleryMain1: "Buğalar Titan Divarlar-ın 5-ci ildönümünü xüsusi basketbol rəsm stansiyası ilə qeyd etdi.",
+        GalleryMain1:
+          "Buğalar Titan Divarlar-ın 5-ci ildönümünü xüsusi basketbol rəsm stansiyası ilə qeyd etdi.",
         GalleryHeader2: "Buğalar Fest: 1-ci Gün",
         GalleryMain2: "Buğalar Fest-in 1-ci günündən şəkillər!",
         GalleryHeader3: "Buğalar Fest: 2-ci Gün",
-        GalleryMain3: "Buğalar Fest 2023-ün 2-ci günündən ən yaxşı şəkillərə bax!",
+        GalleryMain3:
+          "Buğalar Fest 2023-ün 2-ci günündən ən yaxşı şəkillərə bax!",
         GalleryHeader4: "White Sox-da Buğalar günü",
         GalleryMain4: `White Sox-da Buğalar Günü bizim yeni Bulls yeniyetmələrimiz Julian Phillips və Adama Sanogo ilə Uşaq Zonasında ilk meydançanı, basketbol maneəsi kurslarını ataraq uğurla keçdi.`,
         MEN: "KİŞİ",
@@ -71,9 +73,12 @@ i18n.use(initReactI18next).init({
         GameNotes: "Oyun Qeydləri",
         MediaGuidee: "Media Bələdçisi",
         Copyright: "Copyright © 2023 Bütün hüquqlar qorunur.",
-        Footer1: "Məxfilik Siyasəti | İstifadə şərtləri | Müştəri Dəstəyi | Əlçatanlıq və Qapalı Altyazılar | Məxfilik Seçimləriniz",
-        Footer2: "Kuki Siyasəti | AEA/Böyük Britaniya Məxfilik Bəyannaməsi | Braziliya Məxfilik Bəyannaməsi | Kaliforniya İstehlakçı Məxfilik Bəyannaməsi | Kolorado İstehlakçı Məxfilik Bəyannaməsi",
-        Footer3: "Bu vebsaytdakı hər hansı məzmuna daxil olmaqda çətinlik çəkirsinizsə, lütfən Əlçatan olan səhifəmizə daxil olun.",
+        Footer1:
+          "Məxfilik Siyasəti | İstifadə şərtləri | Müştəri Dəstəyi | Əlçatanlıq və Qapalı Altyazılar | Məxfilik Seçimləriniz",
+        Footer2:
+          "Kuki Siyasəti | AEA/Böyük Britaniya Məxfilik Bəyannaməsi | Braziliya Məxfilik Bəyannaməsi | Kaliforniya İstehlakçı Məxfilik Bəyannaməsi | Kolorado İstehlakçı Məxfilik Bəyannaməsi",
+        Footer3:
+          "Bu vebsaytdakı hər hansı məzmuna daxil olmaqda çətinlik çəkirsinizsə, lütfən Əlçatan olan səhifəmizə daxil olun.",
         ACCESORIES: "AKSESUARLAR",
         HOMEOFFICE: "EV&OFİS",
         COLLECTIBLES: "KOLLEKSİYALIQ",
@@ -94,18 +99,14 @@ i18n.use(initReactI18next).init({
         DEPARTMENT: "BÖLMƏ",
         PERSONALIZED: "FƏRDİLƏŞDİRİLMİŞ MƏHSULLAR",
         PLAYERS: "OYUNÇULAR",
-        Product1: "Kişi Mitchell & Ness Michael Jordan Qırmızı Chicago Bulls 1997-98 Sərt Klassik Otantik Oyunçu Forması",
+        Product1:
+          "Kişi Mitchell & Ness Michael Jordan Qırmızı Chicago Bulls 1997-98 Sərt Klassik Otantik Oyunçu Forması",
         Name: "Ad",
-        Surname: "Soyad",
-        Phone: "Nömrə",
         Password: "Şifrə",
         HaveAccount: "Hesabınız var?",
         Haventyet: `Hələ qeydiyyatdan keçməmisiniz?`,
         GoHome: "Ana Səyfə",
         YourName: "Adınız",
-        YourSurname: "Soyadınız",
-        EmailOrPhone: "Email və ya Nömrə",
-
 
         AboutMain1: `Chicago Bulls Amerikalı peşəkar basketbol komandasıdır
         Çikaqoda yerləşir. Bulls Milli Basketbolda yarışır
@@ -124,21 +125,23 @@ i18n.use(initReactI18next).init({
         tarixlərində bir NBA Final seriyasını itirdilər.`,
         AboutMain3: `Bulls 1995-1996 mövsümündə 72 oyun qazanaraq NBA-nın sahibi oldu
         rekord.`,
+        hide: "Gizlət",
+        show: "Göstər",
+        validations: {
+          usernameRequired: "İstifadəçi adı tələb olunur",
+          emailRequired: "Email tələb olunur",
+          passwordRequired: "Parol tələb olunur",
+          tooShort: "Çox Qısadır!",
+          tooLong: "Çox Uzundur!",
+          emailRegex: "Zəhmət olmasa düzgün e-poçt ünvanı daxil edin!",
+          passwordMin: "Şifrəniz zəifdir!",
+          passwordRegex: `Parolunuz ən azı aşağıdakıları ehtiva etməlidir:
+            - bir böyük hərf (A..Z)
+            - bir kiçik hərf (a..z)
+            - bir nömrə (0..9)
+            -bir xüsusi simvol(!..@)`,
+        },
       },
-      validations: {
-        usernameRequired: "İstifadəçi adı tələb olunur",
-        emailRequired: "Email tələb olunur",
-        passwordRequired: "Parol tələb olunur",
-        tooShort: "Çox Qısadır!",
-        tooLong: "Çox Uzundur!",
-        emailRegex: "Zəhmət olmasa düzgün e-poçt ünvanı daxil edin!",
-        passwordMin: "Şifrəniz zəifdir!",
-        passwordRegex: `Parolunuz ən azı aşağıdakıları ehtiva etməlidir:
-        - bir böyük hərf (ABC)
-        - bir kiçik hərf (abc)
-        - bir nömrə (123)
-        -bir xüsusi simvol(.@?)`
-      }
     },
     en: {
       translation: {
@@ -171,13 +174,15 @@ i18n.use(initReactI18next).init({
         NewsView: "k views",
         NewsDate: "Sep 17, 2023 • 1:10 PM",
         GalleryHeader1: "Bulls All Summer: Titan Walls",
-        GalleryMain1: "The Bulls celebrated the 5th anniversary of Titan Walls with a custom basketball painting station.",
+        GalleryMain1:
+          "The Bulls celebrated the 5th anniversary of Titan Walls with a custom basketball painting station.",
         GalleryHeader2: "Bulls Fest: Day 1",
         GalleryMain2: "The best photos from Day 1 at Bulls Fest!",
         GalleryHeader3: "Bulls Fest: Day 2",
         GalleryMain3: "See the best pictures from Day 2 of Bulls Fest 2023!",
         GalleryHeader4: "Bulls Day at White Sox",
-        GalleryMain4: "Bulls Day at White Sox was a success with our new Bulls rookies, Julian Phillips and Adama Sanogo, throwing out the first pitch, basketball obstacle courses in the Kids Zone.",
+        GalleryMain4:
+          "Bulls Day at White Sox was a success with our new Bulls rookies, Julian Phillips and Adama Sanogo, throwing out the first pitch, basketball obstacle courses in the Kids Zone.",
         MEN: "MEN",
         WOMEN: "WOMEN",
         KIDS: "KIDS",
@@ -208,9 +213,12 @@ i18n.use(initReactI18next).init({
         GameNotes: "Game Notes",
         MediaGuidee: "Media Guidee",
         Copyright: "Copyright © 2023 All rights reserved.",
-        Footer1: "Privacy Policy | Terms of Use | Customer Support | Accessibility and Closed Captions | Your Privacy Choices",
-        Footer2: "Cookie Policy | EEA/UK Privacy Statement | Brazil Privacy Statement | California Consumer Privacy Statement | Colorado Consumer Privacy Statement",
-        Footer3: "If you are having difficulty accessing any content on this website, please visit our Accessibility page.",
+        Footer1:
+          "Privacy Policy | Terms of Use | Customer Support | Accessibility and Closed Captions | Your Privacy Choices",
+        Footer2:
+          "Cookie Policy | EEA/UK Privacy Statement | Brazil Privacy Statement | California Consumer Privacy Statement | Colorado Consumer Privacy Statement",
+        Footer3:
+          "If you are having difficulty accessing any content on this website, please visit our Accessibility page.",
         ACCESORIES: "ACCESORIES",
         HOMEOFFICE: "HOME&OFFICE",
         COLLECTIBLES: "COLLECTIBLES",
@@ -231,18 +239,14 @@ i18n.use(initReactI18next).init({
         DEPARTMENT: "DEPARTMENT",
         PERSONALIZED: "PERSONALISED PRODUCTS",
         PLAYERS: "PLAYERS",
-        Product1: "Men's Mitchell & Ness Michael Jordan Red Chicago Bulls 1997-98 Hardwood Classics Authentic Player Jersey",
+        Product1:
+          "Men's Mitchell & Ness Michael Jordan Red Chicago Bulls 1997-98 Hardwood Classics Authentic Player Jersey",
         Name: "Name",
-        Surname: "Surname",
-        Phone: "Phone",
         Password: "Password",
         HaveAccount: "Have an account",
         Haventyet: `Haven't register yet`,
         GoHome: "Go Home",
         YourName: "Your Name",
-        YourSurname: "Your Surname",
-        EmailOrPhone: "Email Or Phone",
-
 
         AboutMain1: `The Chicago Bulls are an American professional basketball team
         based in Chicago. The Bulls compete in the National Basketball
@@ -261,21 +265,23 @@ i18n.use(initReactI18next).init({
         losing an NBA Finals series in their history.`,
         AboutMain3: `The Bulls won 72 games during the 1995–96 season, setting an NBA
         record.`,
+        hide: "Hide",
+        show: "Show",
+        validations: {
+          usernameRequired: "Username is required",
+          emailRequired: "Email is required",
+          passwordRequired: "Password is required",
+          tooShort: "Too Short!",
+          tooLong: "Too Long!",
+          emailRegex: "Please enter a valid email address!",
+          passwordMin: "Your password is weak!",
+          passwordRegex: `Your password must contain at least: 
+            -one uppercase letter(A..Z)
+            -one lowercase letter(a..z) 
+            -one number(0..9) 
+            -one special character(!..@)`,
+        },
       },
-      validations: {
-        usernameRequired: "Username is required",
-        emailRequired: "Email is required",
-        passwordRequired: "Password is required",
-        tooShort: "Too Short!",
-        tooLong: "Too Long!",
-        emailRegex: "Please enter a valid email address!",
-        passwordMin: "Your password is weak!",
-        passwordRegex: `Your password must contain at least: 
-        -one uppercase letter(ABC)
-        -one lowercase letter(abc) 
-        -one number(123) 
-        -one special character(.@?)`
-      }
     },
   },
   lng: "en",
