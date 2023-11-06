@@ -14,4 +14,7 @@ sequelize
   .catch(function (err) {
     console.log("Failed to connect:" + err.message);
   });
+
+
+  
 module.exports = sequelize;
