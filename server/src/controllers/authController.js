@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
-const fs = require("fs");
-const path = require("path");
-const EmailService = require("../services/email");
+// const fs = require("fs");
+// const path = require("path");
+// const EmailService = require("../services/email");
 const User = require("../models/user");
 const SALT_ROUNDS = 10;
 function login(req, res) {}
@@ -25,19 +25,19 @@ async function registration(req, res) {
     password: hashedPassword,
   });
 
-  const emailTemplate = fs
-    .readFileSync(path.resolve("src", "email-templates", "confirmation.html"))
-    .toString();
-  const confirmationURL = "http://localhost:8080/auth/email-confirmation";
+  // const emailTemplate = fs
+  //   .readFileSync(path.resolve("src", "email-templates", "confirmation.html"))
+  //   .toString();
+  // const confirmationURL = "http://localhost:8080/auth/email-confirmation";
 
-  EmailService.sendMail({
-    from: "Chicago Bulls <info@chicago-bulls>",
-    to: email,
-    subject: "Confirm your email",
-    html: emailTemplate
-      .replace("{confirmationURL}", confirmationURL)
-      .replace("{fullName}", fullName),
-  });
+  // EmailService.sendMail({
+  //   from: "Chicago Bulls <info@chicago-bulls>",
+  //   to: email,
+  //   subject: "Confirm your email",
+  //   html: emailTemplate
+  //     .replace("{confirmationURL}", confirmationURL)
+  //     .replace("{fullName}", fullName),
+  // });
 
   return res.status(201).send({
     error: null,
