@@ -83,6 +83,11 @@
     }
 }
 
+.login-error {
+    font: var(--secular-20);
+    color: var(--red);
+}
+
 @media (max-width: 860px) {
     .form-container > form {
         width: 70%;

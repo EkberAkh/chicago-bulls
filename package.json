@@ -1,0 +1,12 @@
+{
+  "name": "chicago-bulls",
+  "version": "1.0.0",
+  "description": "This is the final project of IATC",
+  "main": "index.js",
+  "scripts": {
+    "client:dev": "npm --prefix ./client/ run dev",
+    "server:dev": "npm --prefix ./server/ run dev"
+  },
+  "author": "hazratahmdzd",
+  "license": "ISC"
+}
