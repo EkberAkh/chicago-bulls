@@ -6,9 +6,9 @@ const Product = require("./models/product");
 const ProductCategory = require("./models/productCategory");
 const APP_ROUTER = require("./routes");
 
-Product.belongsTo(User, { as: "user" });
-Product.belongsTo(ProductCategory, { as: "productCategory" });
-ProductCategory.belongsTo(ProductCategory, { as: "parent" });
+// Product.belongsTo(User, { as: "user" });
+// Product.belongsTo(ProductCategory, { as: "productCategory" });
+// ProductCategory.belongsTo(ProductCategory, { as: "parent" });
 
 sequelize.sync();
 
