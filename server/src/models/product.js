@@ -22,17 +22,13 @@ const Product = sequelize.define(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    stockCount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     rating: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    condition: {
-      type: DataTypes.ENUM("NEW", "USED", "REFURBISHED"),
-      allowNull: false,
+    category: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
