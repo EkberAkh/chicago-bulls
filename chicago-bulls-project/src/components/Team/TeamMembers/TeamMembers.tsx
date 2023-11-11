@@ -3,68 +3,129 @@ import Torrey from "../../../assets/torrey-craig.png";
 import Lonzo from "../../../assets/lonzo-ball.png";
 import Andre from "../../../assets/andre-drummond.png";
 import Jevon from "../../../assets/jevon-karter.png";
-import Alex from "../../../assets/alex-caruso.png";
+import Alex from "../../../assets/alex-karuso.png";
 import Zach from "../../../assets/zach-lavine.png";
 import Nikola from "../../../assets/nikola-vucevic.png";
 import Demar from "../../../assets/demar-derozan.png";
 import Carlik from "../../../assets/carlik-jones.png";
 import Terry from "../../../assets/terry-taylor.png";
 import Patrick from "../../../assets/patrick-williams.png";
-import axios from "axios";
+// import axios from "axios";
 import { useTranslation } from "react-i18next";
-import MemberItem from "./MemberItem";
+
 import "./TeamMembers.css";
 import { useEffect, useState } from "react";
 
-
-
-interface Player {
-  id: number;
-  fullName: string;
-  about: string;
-  shirtNumber: string;
-
-}
-
-
-const playerImports: String[] = [
-  Coby,
-  Torrey,
-  Lonzo,
-  Andre,
-  Jevon,
-  Alex,
-  Zach,
-  Nikola,
-  Demar,
-  Carlik,
-  Terry,
-  Patrick,
-];
-
 export const TeamMembers = () => {
   const { t } = useTranslation();
-  const [teamData, setTeamData] = useState<Player[]>([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/players-list").then((res) => {
-      setTeamData(res.data.players);
-    });
-  }, []);
+  const [teamData, setTeamData] = useState([]); 
+  // useEffect(() => {
+  //   axios.get("http://localhost:8080/players-list").then((res) => {
+  //     setTeamData(res.data)
+  //   });
+  // }, []);
 
   return (
     <div className="container">
       <div className="main">
         <h3>{t("TEAM")}</h3>
         <div className="members">
-          {teamData.map((player, i) => (
-            <MemberItem
-              key={player.id}
-              playerImg={playerImports[i]}
-              playerName={player.fullName}
-              playerNum={player.shirtNumber}
-            />
-          ))}
+          <div className="member-item">
+            <h1>0</h1>
+            <img src={Coby} />
+
+            <div className="bottom">
+              <h1>Coby White</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>1</h1>
+            <img src={Torrey} />
+
+            <div className="bottom">
+              <h1>Torrey Craig</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>2</h1>
+            <img src={Lonzo} />
+
+            <div className="bottom">
+              <h1>Lonzo Ball</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>3</h1>
+            <img src={Andre} />
+
+            <div className="bottom">
+              <h1>Andre Drummond</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>4</h1>
+            <img src={Jevon} />
+
+            <div className="bottom">
+              <h1>Jevon Karter</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>5</h1>
+            <img src={Alex} />
+
+            <div className="bottom">
+              <h1>Alex Karuso</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>6</h1>
+            <img src={Zach} />
+
+            <div className="bottom">
+              <h1>Zach Lavine</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>7</h1>
+            <img src={Nikola} />
+
+            <div className="bottom">
+              <h1>Nikola Vucevic</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>8</h1>
+            <img src={Demar} />
+
+            <div className="bottom">
+              <h1>Demar Derozan</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>9</h1>
+            <img src={Carlik} />
+
+            <div className="bottom">
+              <h1>Carlik Jones</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>10</h1>
+            <img src={Terry} />
+
+            <div className="bottom">
+              <h1>Terry Taylor</h1>
+            </div>
+          </div>
+          <div className="member-item">
+            <h1>11</h1>
+            <img src={Patrick} />
+
+            <div className="bottom">
+              <h1>Patrick Williams</h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>
