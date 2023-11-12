@@ -174,7 +174,7 @@ export const Products: FC = () => {
             <Space wrap />
             <Select
               defaultValue={t("ALL")}
-              style={{ width: 130 }}
+              style={{ width: 100 }}
               onChange={handleChange}
               options={[
                 { value: "top-seller", label: t("TOPSELLER") },
