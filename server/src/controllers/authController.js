@@ -4,7 +4,40 @@ const bcrypt = require("bcrypt");
 // const EmailService = require("../services/email");
 const User = require("../models/user");
 const SALT_ROUNDS = 10;
-function login(req, res) {}
+async function login(req, res) {
+  const { email, password } = req.body
+
+  const user = await User.findOne({
+    where: { email },
+  })
+
+  if(!user) {
+    return res.send({
+      error: "Email or password is incorrect!"
+    })  
+  }
+
+  if(!bcrypt.compareSync(password, user.password)) {
+    return res.send({
+      error: "Email or password is incorrect!"
+    })  
+  }
+
+  const accesToken = jwt.sign({
+    userId: user.id,
+    fullName: user.fullName,
+    email: user.email,
+  },
+   process.env.JWT_SECRET_KEY,
+  {
+    expiresIn: "1h"
+  })
+
+  res.send({
+    error: null,
+    accesToken,
+  })
+}
 
 async function registration(req, res) {
   const { fullName, email, password } = req.body;

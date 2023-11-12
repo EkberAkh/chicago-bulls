@@ -82,6 +82,10 @@
         text-decoration: underline;
     }
 }
+.login-error {
+    font: var(--secular-20);
+    color: var(--red);
+}
 
 @media (max-width: 860px) {
     .form-container > form {
