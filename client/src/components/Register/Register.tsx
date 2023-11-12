@@ -144,9 +144,9 @@ export const Register = () => {
               </FormControl>
             </div>
             <div className="register-btn">
-              {/* <Button isLoading={submitting} type={(methods.formState.errors.email || methods.formState.errors.password || methods.formState.errors.username) ? "button" : "submit"}>
+              <Button isLoading={submitting} type={(methods.formState.errors.email || methods.formState.errors.password || methods.formState.errors.username) ? "button" : "submit"}>
                 {t("Register")}
-              </Button> */}
+              </Button>
               <Link to="/login" id="login">
                 {t("HaveAccount")}
               </Link>

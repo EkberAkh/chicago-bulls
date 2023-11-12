@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const sequelize = require("./database/index");
 const User = require("./models/user");
 const Player = require("./models/player");
@@ -16,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN,
+    origin:'*',
   })
 );
 // app.use(authMiddleware)
