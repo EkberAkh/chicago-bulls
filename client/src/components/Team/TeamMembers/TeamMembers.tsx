@@ -11,6 +11,7 @@ import Carlik from "../../../assets/carlik-jones.png";
 import Terry from "../../../assets/terry-taylor.png";
 import Patrick from "../../../assets/patrick-williams.png";
 import axios from "axios";
+
 import { useTranslation } from "react-i18next";
 import MemberItem from "./MemberItem";
 import "./TeamMembers.css";

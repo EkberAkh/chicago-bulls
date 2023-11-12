@@ -7,10 +7,26 @@ import axios from "axios";
 import { FC } from "react";
 import { Select, Space, Rate } from "antd";
 import { Element } from "react-scroll";
-import productExample from "../../../assets/product-example.png";
-import blackCart from "../../../assets/shopping-cart-black.png";
 import { useTranslation } from "react-i18next";
+import ProductItem from "./ProductItem";
+import matchshirt from "../../../assets/product-example.png";
+import baby from "../../../assets/baby.png";
+import backpack from "../../../assets/backpack.png";
+import ball from "../../../assets/ball.png";
+import cap from "../../../assets/cap.png";
+import longshirt from "../../../assets/longshirt.png";
+import shorts from "../../../assets/shorts.png";
+import tshirt from "../../../assets/tshirt.png";
 
+
+interface Product {
+  img: any;
+  price: number;
+  id: number;
+  description: string;
+  rating: number;
+
+}
 
 const handleChange = (value: string) => {
   console.log(`selected ${value}`);
@@ -32,16 +48,30 @@ function getItem(
   } as MenuItem;
 }
 
-// submenu keys of first level
 const rootSubmenuKeys = ["sub1", "sub2", "sub3", "sub4", "sub5", "sub6"];
 
-export const Products: FC = () => {
-    useEffect(() => {
-        axios.get("http://localhost:8080/products-list").then((res) => {
-          console.log(res.data);
-        });
-      }, []);
 
+
+
+
+export const Products: FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const productsPerPage = 9;
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/products-list")
+      .then((res) => {
+        setProducts(res.data.products);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const [openKeys, setOpenKeys] = useState([""]);
   const { t } = useTranslation();
@@ -83,13 +113,49 @@ export const Products: FC = () => {
   ];
 
   const onOpenChange: MenuProps["onOpenChange"] = (keys) => {
-    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-    if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
+    const latestOpenKey = keys.find(
+      (key) => openKeys.indexOf(key) === -1
+    );
+    if (
+      latestOpenKey &&
+      rootSubmenuKeys.indexOf(latestOpenKey!) === -1
+    ) {
       setOpenKeys(keys);
     } else {
-      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+      setOpenKeys(
+        latestOpenKey ? [latestOpenKey] : []
+      );
     }
   };
+
+  const totalPages = Math.ceil(
+    products.length / productsPerPage
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const paginatedProducts = products.slice(
+    (currentPage - 1) * productsPerPage,
+    currentPage * productsPerPage
+  );
+
+  const getImageForProduct = (productId: number) => {
+    const images = [
+      matchshirt,
+      baby,
+      backpack,
+      ball,
+      cap,
+      longshirt,
+      shorts,
+      tshirt,
+    ];
+
+    return images[productId % images.length];
+  };
+
   return (
     <Element name="shopping">
       <div className="container" id="products-container">
@@ -99,7 +165,6 @@ export const Products: FC = () => {
             mode="inline"
             openKeys={openKeys}
             onOpenChange={onOpenChange}
-            // style={{ width: 256 }}
             items={choices}
           />
         </div>
@@ -119,142 +184,41 @@ export const Products: FC = () => {
               ]}
             />
           </div>
-          <div className="products">
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
+          {loading ? (
+            <div className="loading">Loading...</div>
+          ) : (
+            <>
+              <div className="products">
+                {paginatedProducts.map((product) => (
+                  <ProductItem
+                    key={product.id}
+                    price={product.price}
+                    productImg={getImageForProduct(product.id)}
+                    rating={product.rating}
+                    about={product.description}
+                  />
+                ))}
               </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
+              <div className="pagination">
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handlePageChange(index + 1)}
+                    className={
+                      currentPage === index + 1 ? "active" : ""
+                    }
+                  >
+                    {index + 1}
+                  </button>
+                ))}
               </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-            <div className="product-item">
-              <div className="top">
-                <img src={blackCart} className="product-cart" />
-                <img src={productExample} className="product-element" />
-              </div>
-              <div className="bottom">
-                <h3>$299.99</h3>
-                <p>{t("Product1")}</p>
-                <Rate allowHalf defaultValue={5} disabled />
-              </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       </div>
     </Element>
   );
 };
+
+
+

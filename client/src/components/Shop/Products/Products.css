@@ -20,21 +20,21 @@
     font: var(--lexend-12-light);
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light .ant-menu-item-selected,
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light>.ant-menu .ant-menu-item-selected {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light>.ant-menu .ant-menu-item-selected {
     background-color: var(--red);
     color: var(--white);
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover,
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light>.ant-menu .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover,
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)>.ant-menu-submenu-title:hover,
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light>.ant-menu .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)>.ant-menu-submenu-title:hover {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover,
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light>.ant-menu .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover,
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)>.ant-menu-submenu-title:hover,
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light>.ant-menu .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)>.ant-menu-submenu-title:hover {
     color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light .ant-menu-submenu-selected>.ant-menu-submenu-title,
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-light>.ant-menu .ant-menu-submenu-selected>.ant-menu-submenu-title {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light .ant-menu-submenu-selected>.ant-menu-submenu-title,
+:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light>.ant-menu .ant-menu-submenu-selected>.ant-menu-submenu-title {
     color: var(--red);
 }
 
@@ -53,45 +53,7 @@
     column-gap: 20px;
 }
 
-.product-item {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 
-    >.top {
-        background-color: var(--white);
-        border-radius: 5px;
-        position: relative;
-
-        >.product-cart {
-            width: 30px;
-            position: absolute;
-            right: 15px;
-            top: 10px;
-        }
-
-        >.product-element {
-            width: 100%;
-        }
-    }
-
-    >.bottom {
-        color: var(--white);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-
-        >h3 {
-            font: var(--lexend-20-regular);
-        }
-
-        >p {
-            font: var(--lexend-16-light);
-        }
-    }
-}
 
 .sort-item {
     display: flex;
@@ -112,29 +74,29 @@
     width: 75%;
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background-color: transparent;
     color: var(--white);
     font: var(--lexend-12-light)
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-select .ant-select-arrow {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-select .ant-select-arrow {
     color: var(--white);
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-select-single.ant-select-open .ant-select-selection-item {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-select-single.ant-select-open .ant-select-selection-item {
     color: rgba(255, 255, 255, 0.758);
 }
 
-.ant-select-focused:where(.css-dev-only-do-not-override-xu9wm8).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+.ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
     border-color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
     border-color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-xu9wm8).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+:where(.css-dev-only-do-not-override-1adbn6x).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
     color: var(--white);
     background-color: var(--red);
 }
@@ -161,8 +123,8 @@
         width: 100%;
     }
 
-    :where(.css-dev-only-do-not-override-xu9wm8)[class^="ant-menu"]::before,
-    :where(.css-dev-only-do-not-override-xu9wm8)[class*=" ant-menu"]::before {
+    :where(.css-dev-only-do-not-override-1adbn6x)[class^="ant-menu"]::before,
+    :where(.css-dev-only-do-not-override-1adbn6x)[class*=" ant-menu"]::before {
         content: '';
         display: none;
     }
@@ -190,23 +152,34 @@
         margin-left: -24px;
     }
 
-    .product-item {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+    
+}
 
-        >.top {
-            >.product-cart {
-                width: 20px;
-            }
-        }
-        > .bottom {
-            > h3 {
-                font: var(--secular-14);
-            }
-            > p {
-                font: var(--lexend-10-light);
-            }
-        }
-    }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #333;
+    color: white;
+  }
+  .loading {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
