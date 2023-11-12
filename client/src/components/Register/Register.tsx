@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png";
+import logo from "./../../assets/logo.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { AnimatedPage } from "../../AnimatedPage";
@@ -15,9 +15,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { UserSchema, resolver } from "../../validation";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import axios from "../../axios";
-import { useState } from "react";
 
 export const Register = () => {
   const { t } = useTranslation();
@@ -32,6 +31,7 @@ export const Register = () => {
     mode: "onTouched",
     reValidateMode: "onChange",
   });
+  
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -52,12 +52,12 @@ export const Register = () => {
     setSubmitting(true);
 
     const response = await axios.post("/auth/register", {
-      fullName: methods.getValues().username,
+      fullName: methods.getValues().username, 
       email: methods.getValues().email,
       password: methods.getValues().password,
     });
 
-    if (response.data.error) {
+    if(response.data.error) {
       setError(response.data.error);
       console.log(response.data);
     } else {
@@ -67,6 +67,8 @@ export const Register = () => {
 
     setSubmitting(false);
   }
+
+
   return (
     <>
       <AnimatedPage>
@@ -133,7 +135,9 @@ export const Register = () => {
                       h="1.75rem"
                       size="sm"
                       onClick={handleClick}
-                    />
+                    >
+                      {show ? t("hide") : t("show")}
+                    </Button>
                   </InputRightElement>
                 </InputGroup>
                 {methods.formState.errors.password && (

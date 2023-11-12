@@ -12,6 +12,12 @@ async function login(req, res) {
     where: { email },
   })
 
+  if(email.trim() === '' || password.trim() === '') {
+    return res.send({
+      error: "Email and password are required"
+    })
+  }
+
   if(!user) {
     return res.send({
       error: "Email or password is incorrect!"
@@ -44,6 +50,12 @@ async function registration(req, res) {
   const { fullName, email, password } = req.body;
 
   const existingUser = await User.findOne({ where: { email } });
+
+  if(email.trim() === '' || password.trim() === '', fullName.trim() === '') {
+    return res.send({
+      error: "Name, email and password are required"
+    })
+  }
 
   if (existingUser) {
     return res.send({
