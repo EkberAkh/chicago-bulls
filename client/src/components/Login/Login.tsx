@@ -1,54 +1,22 @@
-import logo from "./../../assets/logo.png";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { Link, NavLink } from "react-router-dom";
 import "./Login.css";
 import { AnimatedPage } from "../../AnimatedPage";
 import { useTranslation } from "react-i18next";
 import { Button, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import { useState, type FormEvent } from "react";
-import axios from "../../axios";
+import { useState } from "react";
 
 export const Login = () => {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
-
-  async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const email = event.currentTarget.elements.namedItem(
-      "email"
-    ) as HTMLInputElement;
-    const password = event.currentTarget.elements.namedItem(
-      "password"
-    ) as HTMLInputElement;
-
-    setSubmitting(true);
-    const response = await axios.post("/auth/login", {
-      email: email.value,
-      password: password.value,
-    });
-
-    if (!response.data.user) {
-      setError(response.data.error);
-    }
-    if(!response.data.error) {
-      localStorage.setItem("acces_token", response.data.accesToken);
-      console.log(response.data);
-      navigate("/");
-    }
-    setSubmitting(false);
-  }
 
   return (
     <>
       <AnimatedPage>
         <div className="container form-container">
           <img src={logo} alt="CHICAGO BULLS" />
-          <p className="login-error">{error}</p>
-          <form onSubmit={handleFormSubmit}>
+          <form>
             <div className="input">
               <div className="labels">
                 <label htmlFor="email">Email</label>
@@ -58,7 +26,6 @@ export const Login = () => {
               </div>
               <input
                 type="email"
-                name="email"
                 id="email"
                 placeholder="abcdemail@gmail.com"
               />
@@ -67,8 +34,6 @@ export const Login = () => {
               <label htmlFor="password">{t("Password")}</label>
               <InputGroup size="md">
                 <Input
-                  id="password"
-                  name="password"
                   pr="4.5rem"
                   type={show ? "text" : "password"}
                   placeholder={t("EnterPassword")}
@@ -86,12 +51,7 @@ export const Login = () => {
               </InputGroup>
             </div>
             <div className="login-btn">
-              <Button
-                type="submit"
-                isLoading={submitting}
-              >
-                {t("Login")}
-              </Button>
+              <button type="submit">{t("Login")}</button>
               <Link to="/register" id="login">
                 {t("Haventyet")}
               </Link>

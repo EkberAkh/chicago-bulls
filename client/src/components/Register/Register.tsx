@@ -1,5 +1,5 @@
-import logo from "./../../assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { AnimatedPage } from "../../AnimatedPage";
 import { useTranslation } from "react-i18next";
@@ -15,6 +15,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { UserSchema, resolver } from "../../validation";
+import { FormEvent } from "react";
+import axios from "../../axios";
 import { useState } from "react";
 
 export const Register = () => {
@@ -23,23 +25,55 @@ export const Register = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
-  const onSubmit = (data: UserSchema) => {
-    console.log(data);
-  };
-
   const methods = useForm<UserSchema>({
     context: {},
     resolver,
     criteriaMode: "all",
-    mode: "onSubmit",
+    mode: "onTouched",
     reValidateMode: "onChange",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    // const fullName = event.currentTarget.elements.namedItem(
+    //   "username"
+    // ) as HTMLInputElement;
+    // const email = event.currentTarget.elements.namedItem(
+    //   "email"
+    // ) as HTMLInputElement;
+    // const password = event.currentTarget.elements.namedItem(
+    //   "password"
+    // ) as HTMLInputElement;
+
+    setSubmitting(true);
+
+    const response = await axios.post("/auth/register", {
+      fullName: methods.getValues().username,
+      email: methods.getValues().email,
+      password: methods.getValues().password,
+    });
+
+    if (response.data.error) {
+      setError(response.data.error);
+      console.log(response.data);
+    } else {
+      navigate("/login");
+      console.log(response.data);
+    }
+
+    setSubmitting(false);
+  }
   return (
     <>
       <AnimatedPage>
         <div className="container form-container">
           <img src={logo} alt="CHICAGO BULLS" />
-          <chakra.form id="form" onSubmit={methods.handleSubmit(onSubmit)}>
+          <p className="register-error">{error}</p>
+          <chakra.form id="form" onSubmit={handleFormSubmit}>
             <div className="input">
               <FormControl
                 isInvalid={Boolean(methods.formState.errors.username)}
@@ -94,9 +128,12 @@ export const Register = () => {
                     {...methods.register("password")}
                   />
                   <InputRightElement marginRight="2px" width="4.5rem">
-                    <Button id="passbtn" h="1.75rem" size="sm" onClick={handleClick}>
-                      {show ? t("hide") : t("show")}
-                    </Button>
+                    <Button
+                      id="passbtn"
+                      h="1.75rem"
+                      size="sm"
+                      onClick={handleClick}
+                    />
                   </InputRightElement>
                 </InputGroup>
                 {methods.formState.errors.password && (
@@ -107,7 +144,9 @@ export const Register = () => {
               </FormControl>
             </div>
             <div className="register-btn">
-              <button type="submit">{t("Register")}</button>
+              {/* <Button isLoading={submitting} type={(methods.formState.errors.email || methods.formState.errors.password || methods.formState.errors.username) ? "button" : "submit"}>
+                {t("Register")}
+              </Button> */}
               <Link to="/login" id="login">
                 {t("HaveAccount")}
               </Link>
