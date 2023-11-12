@@ -100,8 +100,3 @@
     padding: 5px;
     border-radius: 5px;
 }
-
-.register-error {
-    font: var(--secular-20);
-    color: var(--red);
-}
