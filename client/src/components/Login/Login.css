@@ -24,8 +24,7 @@
 
 }
 
-.input  input {
-    width: 94%;
+.input > input {
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -45,14 +44,14 @@
     color: var(--red);
 }
 
-.register-btn {
+.login-btn {
     display: flex;
     align-items: center;
     gap: 30px;
     justify-content: center;
 }
 
-.register-btn > button {
+.login-btn > button {
     padding: 10px 30px;
     border-radius: 5px;
     font: var(--secular-18);
@@ -75,7 +74,7 @@
     align-items: center;
 }
 
-.register-input {
+.login-input {
     color: var(--red);
     text-decoration: none;
 
@@ -83,20 +82,23 @@
         text-decoration: underline;
     }
 }
+/* .login-error {
+    font: var(--secular-20);
+    color: var(--red);
+} */
 
-
-#errorinput{
-    font-size: 12px;
-    color: red;
+.login-error {
+    font: var(--secular-20);
+    color: var(--red);
 }
 
-#form {
-    gap: 30px;
+@media (max-width: 860px) {
+    .form-container > form {
+        width: 70%;
+    }
 }
-
-#passbtn {
-    margin-top: 7px;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
+@media (max-width: 600px) {
+    .form-container > form {
+        width: 90%;
+    }
 }

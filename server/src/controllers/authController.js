@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 // const path = require("path");
 // const EmailService = require("../services/email");
 const User = require("../models/user");
+const jwt = require("jsonwebtoken");
 const SALT_ROUNDS = 10;
 async function login(req, res) {
   const { email, password } = req.body
@@ -45,7 +46,7 @@ async function registration(req, res) {
   const existingUser = await User.findOne({ where: { email } });
 
   if (existingUser) {
-    return res.status(400).send({
+    return res.send({
       error: "User already exists!",
     });
   }
