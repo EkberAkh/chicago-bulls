@@ -83,7 +83,7 @@ To run the project locally, follow these steps:
 
 1. Clone the repository.
 2. Navigate to the project directory.
-3. Install dependencies using `npm install` in both the `frontend` and `backend` directories.
+3. Install dependencies using `npm install` in both the `client` and `server` directories.
 4. Start the frontend and backend servers using `npm run dev` in their respective directories.
 
 Feel free to explore the codebase, and don't hesitate to reach out if you have any questions or encounter issues.
