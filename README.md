@@ -27,7 +27,7 @@ Users should be able to:
 
 ### ScreenShot
 
-![](./design/desktop-design.png)
+![](./client/src/assets/Chicago Bulls Basketball.png)
 
 ### Links
 
