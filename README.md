@@ -31,11 +31,6 @@ Users should be able to:
 
 ![Chicago Bulls Site](./client/src/assets/Chicago%20Bulls%20Basketball.png)
 
-### Links
-
-- [Solution URL](https://github.com/RaviHamidov/FyloLandingPage)
-- [Live Site URL](https://ravihamidov.github.io/FyloLandingPage/)
-
 ## My process
 
 ### Built with
