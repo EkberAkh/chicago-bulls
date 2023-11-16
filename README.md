@@ -1,6 +1,6 @@
 # Israel Azerbaijan Training Center - Chicago Bulls
 
-This is a solution to the [Chicago Bulls Figma file](https://www.figma.com/file/cBN5lNRXfpZKQynB92eXzR/Chicago-Bulls-Basketball?type=design&node-id=0%3A1&mode=design&t=Zgdr8ljQEDLSVnae-1). It is the final project of IATC.
+ Welcome to the Chicago Bulls Site, your go-to destination for comprehensive information about the iconic Chicago Bulls basketball team. This project serves as the final submission for the Interactive and Adaptive Technology Course (IATC). Our team, consisting of Akbar Akhundov, Hazrat Ahmadzada, and Adham Poladov, has collaborated to create a dynamic and engaging web platform that caters to both Bulls enthusiasts and those seeking in-depth insights into the team's world.
 
 ## Table of contents
 
@@ -13,7 +13,8 @@ This is a solution to the [Chicago Bulls Figma file](https://www.figma.com/file/
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-## Overview
+## Figma file
+[Chicago Bulls Figma file](https://www.figma.com/file/cBN5lNRXfpZKQynB92eXzR/Chicago-Bulls-Basketball?type=design&node-id=0%3A1&mode=design&t=Zgdr8ljQEDLSVnae-1).
 
 ### The challenge
 
