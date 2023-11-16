@@ -4,58 +4,62 @@ const bcrypt = require("bcrypt");
 // const EmailService = require("../services/email");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
-const SALT_ROUNDS = 10;
-async function login(req, res) {
-  const { email, password } = req.body
+const tokenService = require("../services/token");
+const userService = require("../services/users")
 
-  const user = await User.findOne({
-    where: { email },
-  })
-
-  if(email.trim() === '' || password.trim() === '') {
-    return res.send({
-      error: "Email and password are required"
-    })
-  }
-
-  if(!user) {
-    return res.send({
-      error: "Email or password is incorrect!"
-    })  
-  }
-
-  if(!bcrypt.compareSync(password, user.password)) {
-    return res.send({
-      error: "Email or password is incorrect!"
-    })  
-  }
-
-  const accesToken = jwt.sign({
-    userId: user.id,
-    fullName: user.fullName,
-    email: user.email,
-  },
-   process.env.JWT_SECRET_KEY,
-  {
-    expiresIn: "1h"
-  })
+async function refreshAccessToken( req, res ) {
+  const { refreshToken: refreshTokenFromPayload } = req.body;
+  const {accesToken, refreshToken} = await tokenService.refreshAccessToken(refreshTokenFromPayload);
 
   res.send({
     error: null,
     accesToken,
-  })
+    refreshToken
+  });
+}
+
+async function login(req, res) {
+  const { email, password } = req.body;
+
+  const user = await userService.getUserByEmail(email);
+
+  if (email.trim() === "" || password.trim() === "") {
+    return res.send({
+      error: "Email and password are required",
+    });
+  }
+
+  if (!user) {
+    return res.send({
+      error: "Email or password is incorrect!",
+    });
+  }
+
+  if (!bcrypt.compareSync(password, user.password)) {
+    return res.send({
+      error: "Email or password is incorrect!",
+    });
+  }
+
+  const { accesToken, refreshToken } = tokenService.generateTokenPair(user);
+
+  res.send({
+    error: null,
+    accesToken,
+    refreshToken
+  });
 }
 
 async function registration(req, res) {
   const { fullName, email, password } = req.body;
 
-  const existingUser = await User.findOne({ where: { email } });
-
-  if(email.trim() === '' || password.trim() === '', fullName.trim() === '') {
+  if ((email.trim() === "" || password.trim() === "", fullName.trim() === "")) {
     return res.send({
-      error: "Name, email and password are required"
-    })
+      error: "Name, email and password are required",
+    });
   }
+
+  const existingUser = await userService.getUserByEmail(email);
 
   if (existingUser) {
     return res.send({
@@ -63,13 +67,7 @@ async function registration(req, res) {
     });
   }
 
-  const hashedPassword = bcrypt.hashSync(password, SALT_ROUNDS);
-
-  const user = await User.create({
-    fullName,
-    email,
-    password: hashedPassword,
-  });
+  const user = await userService.createUser(fullName, email, password)
 
   // const emailTemplate = fs
   //   .readFileSync(path.resolve("src", "email-templates", "confirmation.html"))
@@ -98,4 +96,5 @@ async function registration(req, res) {
 module.exports = {
   login,
   registration,
+  refreshAccessToken
 };
