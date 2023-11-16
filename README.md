@@ -1,6 +1,6 @@
 # Israel Azerbaijan Training Center - Chicago Bulls
 
- Welcome to the Chicago Bulls Site, your go-to destination for comprehensive information about the iconic Chicago Bulls basketball team. This project serves as the final submission for the Israel Azerbaijan Training Center. Our team, consisting of Akbar Akhundov, Hazrat Ahmadzada, and Adham Poladov, has collaborated to create a dynamic and engaging web platform that caters to both Bulls enthusiasts and those seeking in-depth insights into the team's world.
+ Welcome to the Chicago Bulls Site, your go-to destination for comprehensive information about the iconic Chicago Bulls basketball team. This project serves as the final submission for the Israel Azerbaijan Training Center. Our team, consisting of Akbar Akhundov, Hazrat Ahmadzada, and Adham Poladzada, has collaborated to create a dynamic and engaging web platform that caters to both Bulls enthusiasts and those seeking in-depth insights into the team's world.
 
 ## Table of contents
 
@@ -120,7 +120,8 @@ Feel free to explore the codebase, and don't hesitate to reach out if you have a
 
 Feel free to explore these resources for in-depth information and tutorials on the technologies used in your project.
 
-## Author
+## Authors
 
-- Website 
-- Instagram 
+- [Akbar Akhundov](https://www.linkedin.com/in/akbar-akhundov-93697524b/)
+- [Hazrat Ahmadzada](https://www.linkedin.com/in/hazrat-ahmadzada-927b24252/)
+- [Adham Poladzada](https://www.linkedin.com/in/adham-poladzadeh-a46621242/)
