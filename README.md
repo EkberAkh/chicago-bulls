@@ -93,7 +93,35 @@ Feel free to explore the codebase, and don't hesitate to reach out if you have a
 
 ### Useful resources
 
-- As Soon As ;)
+### Vite (Frontend Build Tool)
+- [Vite Documentation](https://vitejs.dev/guide/): Official documentation for Vite, the frontend build tool used in this project.
+
+### React (JavaScript Library for UI)
+- [React Documentation](https://reactjs.org/docs/getting-started.html): Official documentation for React, the JavaScript library used for building user interfaces.
+
+### TypeScript (Typed Superset of JavaScript)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/): Official documentation for TypeScript, the statically typed superset of JavaScript used in this project.
+
+### Node.js (JavaScript Runtime for Backend)
+- [Node.js Documentation](https://nodejs.org/en/docs/): Official documentation for Node.js, the JavaScript runtime used for building the backend of your project.
+
+### PostgreSQL (Relational Database)
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/): Official documentation for PostgreSQL, the open-source relational database management system used in this project.
+
+### General Web Development Resources
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web): Mozilla Developer Network provides comprehensive web development documentation and guides.
+
+### React and TypeScript Tutorials
+- [React + TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react): A collection of cheatsheets to help you with React and TypeScript development.
+
+### Node.js and Express Tutorials
+- [Node.js + Express.js Guide](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs): Learn how to use Node.js and Express.js to build web applications.
+
+### Database Design and SQL
+- [Database Design Tutorial](https://www.tutorialspoint.com/dbms/index.htm): Tutorial on database design concepts and principles.
+- [W3Schools SQL Tutorial](https://www.w3schools.com/sql/): Comprehensive SQL tutorial by W3Schools.
+
+Feel free to explore these resources for in-depth information and tutorials on the technologies used in your project.
 
 ## Author
 
