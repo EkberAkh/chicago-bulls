@@ -25,7 +25,7 @@ Users should be able to:
 - Add items to cart
 - Filter and Sort products
 
-### ScreenShot
+### Screenshot
 
 ![Chicago Bulls Site](./client/src/assets/Chicago%20Bulls%20Basketball.png)
 
