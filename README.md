@@ -27,7 +27,7 @@ Users should be able to:
 
 ### ScreenShot
 
-![](./client/src/assets/Chicago Bulls Basketball.png)
+![Chicago Bulls Site](./client/src/assets/Chicago%20Bulls%20Basketball.png)
 
 ### Links
 
