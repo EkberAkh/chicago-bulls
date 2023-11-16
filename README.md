@@ -5,6 +5,7 @@
 ## Table of contents
 
 - [Overview](#overview)
+  - [Figma file](#figma-file)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
