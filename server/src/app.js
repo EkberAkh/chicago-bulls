@@ -6,6 +6,7 @@ const Player = require("./models/player");
 const Product = require("./models/product");
 const ProductCategory = require("./models/productCategory");
 const APP_ROUTER = require("./routes");
+const authMiddleware = require("./middlewares/authMiddleware")
 
 // Product.belongsTo(User, { as: "user" });
 // Product.belongsTo(ProductCategory, { as: "productCategory" });
@@ -17,10 +18,10 @@ const app = express();
 
 app.use(
   cors({
-    origin:'*',
+    origin: process.env.CLIENT_ORIGIN,
   })
 );
-// app.use(authMiddleware)
+app.use(authMiddleware);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

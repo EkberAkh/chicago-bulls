@@ -5,9 +5,10 @@ import hamburger from "../../assets/hamburger.png";
 import closeMark from "../../assets/close.png";
 
 import { Select, Space } from "antd";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Auth from "../Auth/Auth";
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
@@ -105,22 +106,18 @@ export const Header = () => {
                 <img src={close ? closeMark : hamburger} alt="hamburger" />
               </button>
               <img className="cart" src={cart} alt="" />
-              <div className="nav-end">
-                <Link to="/register">
-                  <button className="login-register">{t("Register")}</button>
-                </Link>
-                <Space wrap>
-                  <Select
-                    defaultValue={language}
-                    style={{ width: 68 }}
-                    onChange={handleChange}
-                    options={[
-                      { value: "az", label: "AZ" },
-                      { value: "en", label: "EN" },
-                    ]}
-                  />
-                </Space>
-              </div>
+              <Space wrap>
+                <Select
+                  defaultValue={language}
+                  style={{ width: 68 }}
+                  onChange={handleChange}
+                  options={[
+                    { value: "az", label: "AZ" },
+                    { value: "en", label: "EN" },
+                  ]}
+                />
+              </Space>
+              <Auth/>
             </div>
           </div>
         </div>

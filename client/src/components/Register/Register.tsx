@@ -39,16 +39,6 @@ export const Register = () => {
   async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // const fullName = event.currentTarget.elements.namedItem(
-    //   "username"
-    // ) as HTMLInputElement;
-    // const email = event.currentTarget.elements.namedItem(
-    //   "email"
-    // ) as HTMLInputElement;
-    // const password = event.currentTarget.elements.namedItem(
-    //   "password"
-    // ) as HTMLInputElement;
-
     setSubmitting(true);
 
     const response = await axios.post("/auth/register", {
@@ -124,6 +114,7 @@ export const Register = () => {
                 <FormLabel>{t("Password")}</FormLabel>
                 <InputGroup size="md">
                   <Input
+                  id="password"
                     pr="4.5rem"
                     type={show ? "text" : "password"}
                     placeholder={t("EnterPassword")}

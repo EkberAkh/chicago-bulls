@@ -33,9 +33,11 @@ export const Login = () => {
 
     if (!response.data.user) {
       setError(response.data.error);
+      console.log(response.data);
     }
     if(!response.data.error) {
       localStorage.setItem("acces_token", response.data.accesToken);
+      localStorage.setItem("refresh_token", response.data.refreshToken);
       console.log(response.data);
       navigate("/");
     }
@@ -65,7 +67,7 @@ export const Login = () => {
             </div>
             <div className="input">
               <label htmlFor="password">{t("Password")}</label>
-              <InputGroup size="md">
+              <InputGroup id="passwordmain" size="md">
                 <Input
                   id="password"
                   name="password"

@@ -34,7 +34,7 @@ header {
 .container > .header-items > .header-end {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
   >.cart{
     width: 30px;
   }
@@ -198,17 +198,34 @@ header {
 
 
 .login-register {
+  width: 100%;
   border-radius: 5px;
   padding: 9px;
-  background-color: transparent;
-  border: 1px solid #fff;
+  background-color: #b40f36;
   color: var(--white);
+  border: 1px solid var(--white);
   font: var(--lexend-12-regular);
   cursor: pointer;
   transition: 0.2s all;
 
   &:hover {
-    border: 1px solid var(--red);
+    transition: 0.2s all;
+    opacity: 0.7;
+  }
+}
+.logout {
+  width: 100%;
+  border-radius: 5px;
+  padding: 9px;
+  background-color: var(--white);
+  color: var(--red);
+  border: 1px solid var(--red);
+  font: var(--lexend-12-regular);
+  cursor: pointer;
+  transition: 0.2s all;
+
+  &:hover {
+    opacity: 0.5;
     transition: 0.2s all;
   }
 }
@@ -219,4 +236,30 @@ header {
   align-items: end;
   justify-content: end;
   gap: 10px;
+}
+
+/* profil */
+
+.profil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profil-photo {
+  background-color: var(--red);
+  border-radius: 50%;
+  padding: 10px 15px;
+  border: none;
+  color: #fff;
+  font: var(--secular-16);
+}
+
+.profil-about {
+  >h3 {
+    font: var(--secular-18);
+  }
+  >p {
+    font: var(--lexend-12-regular);
+  }
 }

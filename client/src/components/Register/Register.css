@@ -24,12 +24,18 @@
 
 }
 
+#password {
+    background-color: var(--white);
+    color: black;
+}
+
 .input  input {
-    width: 94%;
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: none;
     font: var(--secular-16);
+    color: black;
     
     &:hover {
         outline: 2px solid var(--red);
