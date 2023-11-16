@@ -12,7 +12,7 @@
 - [Process](#process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
-- [Author](#author)
+- [Authors](#authors)
 
 ## Figma file
 [Chicago Bulls Figma file](https://www.figma.com/file/cBN5lNRXfpZKQynB92eXzR/Chicago-Bulls-Basketball?type=design&node-id=0%3A1&mode=design&t=Zgdr8ljQEDLSVnae-1).
