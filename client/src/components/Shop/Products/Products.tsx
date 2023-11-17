@@ -62,7 +62,7 @@ export const Products: FC = () => {
 
   useEffect(() => {
     axiosInstance
-      .get("http://localhost:8080/products-list")
+      .get("products-list")
       .then((res) => {
         setProducts(res.data.products);
         setLoading(false);
@@ -174,7 +174,7 @@ export const Products: FC = () => {
             <Space wrap />
             <Select
               defaultValue={t("ALL")}
-              style={{ width: 130 }}
+              style={{ width: 160 }}
               onChange={handleChange}
               options={[
                 { value: "top-seller", label: t("TOPSELLER") },

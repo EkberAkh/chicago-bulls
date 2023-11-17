@@ -3,7 +3,9 @@ const jwt = require("jsonwebtoken");
 const IGNORED_ROUTES = [
     "/auth/login",
     "/auth/register",
-    "/auth/token"
+    "/auth/token",
+    "/players-list",
+    "/products-list"
 ]
 
 function authMiddleware(req, res, next) {
