@@ -79,8 +79,7 @@ export const Footer = () => {
       <div className="footer-end">
         <p>{t("Copyright")}</p>
         <p>{t("Footer1")}</p>
-        <p>{t("Footer2")}</p>
-        <p>{t("Footer3")}</p>
+       
       </div>
     </div>
   </footer>

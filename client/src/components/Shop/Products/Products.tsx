@@ -2,7 +2,7 @@ import "./Products.css";
 import React, { useEffect,useState } from "react";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
-import axios from "axios";
+import axiosInstance from "../../../axios";
 
 import { FC } from "react";
 import { Select, Space, Rate } from "antd";
@@ -61,7 +61,7 @@ export const Products: FC = () => {
   const productsPerPage = 9;
 
   useEffect(() => {
-    axios
+    axiosInstance
       .get("http://localhost:8080/products-list")
       .then((res) => {
         setProducts(res.data.products);

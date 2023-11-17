@@ -6,7 +6,7 @@ import closeMark from "../../assets/close.png";
 
 import { Select, Space } from "antd";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
 import { useTranslation } from "react-i18next";
 import Auth from "../Auth/Auth";
 
@@ -23,11 +23,10 @@ export const Header = () => {
 
   useEffect(() => {
     localStorage.setItem("language", language);
+    i18n.changeLanguage(language);
+
   }, [language]);
 
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, []);
 
   function hamburgerHandler() {
     setClose(!close);
@@ -62,6 +61,21 @@ export const Header = () => {
       setClose(false);
     });
   }
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
+
+  const updateScreenSize = () => {
+    setIsSmallScreen(window.innerWidth <= 600);
+  };
+
+  useEffect(() => {
+    // Initial setup
+    window.addEventListener("resize", updateScreenSize);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  }, []);
 
   return (
     <>
@@ -106,6 +120,7 @@ export const Header = () => {
                 <img src={close ? closeMark : hamburger} alt="hamburger" />
               </button>
               <img className="cart" src={cart} alt="" />
+                 {!isSmallScreen && <Auth/>}
               <Space wrap>
                 <Select
                   defaultValue={language}
@@ -117,7 +132,6 @@ export const Header = () => {
                   ]}
                 />
               </Space>
-              <Auth/>
             </div>
           </div>
         </div>
@@ -126,6 +140,10 @@ export const Header = () => {
       <div className="hamburger-screen">
         <nav>
           <ul>
+            <li>
+            {isSmallScreen && <Auth/>}
+
+            </li>
             <li>
               <NavLink id="home" className="link" to="/">
                 {t("HOME")}
