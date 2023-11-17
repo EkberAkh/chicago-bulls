@@ -49,7 +49,7 @@ export const TeamMembers = () => {
   const [teamData, setTeamData] = useState<Player[]>([]);
 
   useEffect(() => {
-    axiosInstance.get("http://localhost:8080/players-list").then((res) => {
+    axiosInstance.get("players-list").then((res) => {
       setTeamData(res.data.players);
     });
   }, []);
