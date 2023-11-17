@@ -119,14 +119,33 @@ header {
 .hamburger-screen > nav {
   height: 100%;
   display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 .hamburger-screen > nav > ul {
   list-style-type: none;
   color: var(--white);
   font: var(--secular-24);
+  width: 60%;
 }
 .hamburger-screen > nav > ul > li {
   margin-bottom: 15px;
+}
+.hamburger-screen > nav > ul > li>.profil-about {
+  > h3 {
+    font: var(--secular-18);
+    color: var(--white);
+  }
+  > p {
+    font: var(--lexend-12-regular);
+    color: var(--white);
+
+  }
+}
+.hamburger-screen > nav > ul > li>.logout{
+    font: var(--secular-12);
+ 
 }
 .hamburger-screen > nav > ul > li > .link {
   text-decoration: none;
@@ -134,6 +153,12 @@ header {
 }
 .hamburger-screen > nav > ul > li > .active {
   color: var(--red);
+}
+
+.hamburger-screen > nav > ul > li > .login-reg-wrapper{
+display: flex;
+flex-direction: column;
+gap: 10px;
 }
 
 @media (max-width: 792px) {

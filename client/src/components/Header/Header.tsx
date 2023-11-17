@@ -5,10 +5,11 @@ import hamburger from "../../assets/hamburger.png";
 import closeMark from "../../assets/close.png";
 
 import { Select, Space } from "antd";
-import { NavLink } from "react-router-dom";
-import { useEffect,useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Auth from "../Auth/Auth";
+import { jwtDecode } from "jwt-decode";
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
@@ -24,9 +25,7 @@ export const Header = () => {
   useEffect(() => {
     localStorage.setItem("language", language);
     i18n.changeLanguage(language);
-
   }, [language]);
-
 
   function hamburgerHandler() {
     setClose(!close);
@@ -76,7 +75,30 @@ export const Header = () => {
       window.removeEventListener("resize", updateScreenSize);
     };
   }, []);
+  interface JwtDecoded {
+    email: string;
+    userId: string;
+    fullName: string;
+    exp: number;
+    iat: number;
+  }
+  const [token, setToken] = useState<JwtDecoded | null>(null);
 
+  const accessToken = localStorage.getItem("acces_token");
+
+  useEffect(() => {
+    if (accessToken) {
+      setToken(jwtDecode(accessToken));
+    }
+  }, []);
+  function handleLogout() {
+    localStorage.clear();
+    setTimeout(() => {
+      document.body.classList.add("loading");
+      location.reload();
+      document.body.classList.remove("loading");
+    }, 220);
+  }
   return (
     <>
       <header>
@@ -120,7 +142,7 @@ export const Header = () => {
                 <img src={close ? closeMark : hamburger} alt="hamburger" />
               </button>
               <img className="cart" src={cart} alt="" />
-                 {!isSmallScreen && <Auth/>}
+              {!isSmallScreen && <Auth />}
               <Space wrap>
                 <Select
                   defaultValue={language}
@@ -141,9 +163,20 @@ export const Header = () => {
         <nav>
           <ul>
             <li>
-            {isSmallScreen && <Auth/>}
+              {isSmallScreen && (
+               token ?  <div className="profil-about">
+               <h3>{token.fullName}</h3>
+               <p>{token.email}</p>
+             </div> :
+              <div className="login-reg-wrapper">
+                <Link to='/register' className="login-register">{t("Register")}</Link>
+                <Link to='/login' className="login-register">{t("Login")}</Link>
 
+              </div>
+             
+              )}
             </li>
+           
             <li>
               <NavLink id="home" className="link" to="/">
                 {t("HOME")}
@@ -169,6 +202,9 @@ export const Header = () => {
               <NavLink id="shop" className="link" to="/shop">
                 {t("SHOP")}
               </NavLink>
+            </li>
+            <li>
+            {token && <button onClick={handleLogout} className="logout">{t("Logout")}</button>}
             </li>
           </ul>
         </nav>
