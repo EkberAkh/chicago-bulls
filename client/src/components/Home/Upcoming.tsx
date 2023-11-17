@@ -28,6 +28,7 @@ const Upcoming = () => {
         tablet: {
           breakpoint: { max: 780, min: 464 },
           items: 1,
+          
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
@@ -35,6 +36,22 @@ const Upcoming = () => {
           
         },
       };
+
+
+      const [isSmallScreen, setIsSmallScreen] = React.useState(window.innerWidth <= 780);
+
+  const updateScreenSize = () => {
+    setIsSmallScreen(window.innerWidth <= 780);
+  };
+
+  React.useEffect(() => {
+
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  }, []); 
   return (
     <section className="upcoming">
     <div className="container">
@@ -43,7 +60,7 @@ const Upcoming = () => {
     
         <div className="cards">
 
-          <Carousel partialVisbile={false} draggable={true} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true} responsive={responsive}>
+          <Carousel arrows={!isSmallScreen} partialVisbile={false} draggable={true} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true} responsive={responsive}>
 
 
 

@@ -133,6 +133,10 @@ export const Products: FC = () => {
   );
 
   const handlePageChange = (page: number) => {
+    const productsContainer = document.getElementById("products-container");
+  if (productsContainer) {
+    productsContainer.scrollIntoView({ behavior: "smooth" });
+  }
     setCurrentPage(page);
   };
 
