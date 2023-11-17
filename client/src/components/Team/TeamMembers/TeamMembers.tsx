@@ -10,12 +10,13 @@ import Demar from "../../../assets/demar-derozan.png";
 import Carlik from "../../../assets/carlik-jones.png";
 import Terry from "../../../assets/terry-taylor.png";
 import Patrick from "../../../assets/patrick-williams.png";
-import axios from "axios";
+
 
 import { useTranslation } from "react-i18next";
 import MemberItem from "./MemberItem";
 import "./TeamMembers.css";
 import { useEffect, useState } from "react";
+import axiosInstance from "../../../axios";
 
 
 
@@ -48,7 +49,7 @@ export const TeamMembers = () => {
   const [teamData, setTeamData] = useState<Player[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/players-list").then((res) => {
+    axiosInstance.get("http://localhost:8080/players-list").then((res) => {
       setTeamData(res.data.players);
     });
   }, []);

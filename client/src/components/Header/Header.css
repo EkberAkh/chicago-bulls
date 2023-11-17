@@ -136,7 +136,7 @@ header {
   color: var(--red);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 792px) {
   .container > .header-items > nav > ul {
     display: none;
   }
@@ -262,4 +262,8 @@ header {
   >p {
     font: var(--lexend-12-regular);
   }
+}
+
+:where(.css-dev-only-do-not-override-1adbn6x).ant-select-single .ant-select-selector .ant-select-selection-item{
+  padding: 0;
 }

@@ -21,7 +21,21 @@
     font: var(--lexend-12-regular);
   }
 }
+.hamburger-screen > nav > ul> li>div>.css-guotn{
+  color: #fff;
+  font: var(--secular-16);
+}
+.hamburger-screen > nav > ul> li>div>.css-r6z5ec>.chakra-menu__menu-list>.chakra-menu__menuitem>.profil> .profil-about {
+  > h3 {
+    font: var(--secular-18);
+    color: var(--black);
+  }
+  > p {
+    font: var(--lexend-12-regular);
+    color: var(--black);
 
+  }
+}
 .login-register {
   width: 100%;
   border-radius: 5px;
@@ -53,4 +67,7 @@
     opacity: 0.5;
     transition: 0.2s all;
   }
+}
+div>.css-guotn{
+  height: 32px;
 }
