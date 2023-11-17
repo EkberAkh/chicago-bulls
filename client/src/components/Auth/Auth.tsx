@@ -19,7 +19,11 @@ const Auth: FC = () => {
   // const navigate = useNavigate();
   function handleLogout() {
     localStorage.clear();
-    location.reload();
+    setTimeout(() => {
+      document.body.classList.add("loading");
+      location.reload();
+      document.body.classList.remove("loading");
+    }, 220);
   }
 
   const [token, setToken] = useState<JwtDecoded | null>(null);
