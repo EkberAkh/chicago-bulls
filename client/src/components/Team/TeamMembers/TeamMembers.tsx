@@ -47,10 +47,12 @@ const playerImports: String[] = [
 export const TeamMembers = () => {
   const { t } = useTranslation();
   const [teamData, setTeamData] = useState<Player[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     axiosInstance.get("players-list").then((res) => {
       setTeamData(res.data.players);
+      setLoading(false);
     });
   }, []);
 
@@ -59,14 +61,16 @@ export const TeamMembers = () => {
       <div className="main">
         <h3>{t("TEAM")}</h3>
         <div className="members">
-          {teamData.map((player, i) => (
+          { loading ? (
+            <div className="loading">LOADING...</div>
+          ) : (teamData.map((player, i) => (
             <MemberItem
               key={player.id}
               playerImg={playerImports[i]}
               playerName={player.fullName}
               playerNum={player.shirtNumber}
             />
-          ))}
+          )))}
         </div>
       </div>
     </div>
