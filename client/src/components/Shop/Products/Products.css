@@ -177,9 +177,9 @@
     color: white;
   }
   .loading {
+    font: var(--secular-18);
     text-align: center;
     padding: 20px;
-    font-weight: bold;
-    color: #333;
+    color: #fff;
   }
   
