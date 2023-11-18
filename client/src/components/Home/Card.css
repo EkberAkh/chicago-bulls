@@ -82,7 +82,78 @@
   > .card:last-child {
   margin-right: 0;
 }
-
+@media (max-width: 2300px){
+  .upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-track
+  > .react-multi-carousel-item
+  > .card {
+  width: 535px;
+}
+}
+@media (max-width: 1924px){
+  .upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-track
+  > .react-multi-carousel-item
+  > .card {
+  width: 475px;
+}
+}
+@media (max-width: 1734px){
+  .upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-track
+  > .react-multi-carousel-item
+  > .card {
+  width: 435px;
+}
+}
+@media (max-width: 1594px){
+  .upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-track
+  > .react-multi-carousel-item
+  > .card {
+  width: 400px;
+}
+}
+@media (max-width: 1466px){
+  .upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-track
+  > .react-multi-carousel-item
+  > .card {
+  width: 380px;
+}
+}
+@media (max-width: 1396px){
+  .upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-track
+  > .react-multi-carousel-item
+  > .card {
+  width: 350px;
+}
+}
 @media (max-width: 1279px) {
   .upcoming
     > .container

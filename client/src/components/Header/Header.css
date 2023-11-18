@@ -1,7 +1,7 @@
 @import url("../../App.css");
 
 header {
-  padding-top: 14px;
+  padding: 14px 0;
   text-transform: uppercase;
   position: sticky;
   top: 0;

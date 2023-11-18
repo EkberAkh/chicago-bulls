@@ -1,13 +1,19 @@
 import './About.css';
-import about_img from "../../assets/about.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
-const About = () => {
+
+type AboutProps = {
+  about_img: string;
+  title: string;
+  seeMore: boolean
+};
+
+const About: React.FC<AboutProps> = ({about_img,title,seeMore}) => {
   const {t} = useTranslation();
   return (
     <section className="about">
-        <h2 className="title">{t("AboutUs")}</h2>
+        <h2 className="title">{title}</h2>
         <div className="container">
           <div className="about-wrapper">
 
@@ -26,7 +32,7 @@ const About = () => {
             <p>
             {t("AboutMain3")}
             </p>
-            <Link className='link' to="/news">{t("SeeMore")}</Link>
+           {seeMore &&  <Link className='link' to="/news">{t("SeeMore")}</Link>}
             </div>
           </div>
           </div>

@@ -32,6 +32,8 @@ i18n.use(initReactI18next).init({
           "Pau Gasol Basketbol Şöhrət Zalına girməyə hazırlaşarkən Çikaqo Bull kimi vaxtını xatırlayır.",
         NewsMain1:
           "Gasol hər iki Buğalar mövsümündə All-Star oldu, dörd il ərzində ilk All-Star seçimləri oldu, 2015-ci ildə qardaşı Markın qarşısında tarixi NBA-da All-Star oyununa başladı, All-NBA oldu, karyerasında ən yaxşı 46 xal topladı. , liqaya dubl-dubllarda başçılıq etdi və liqa tarixində bir mövsümdə çoxlu üçlü dubl edən 35 yaşdan yuxarı dördüncü oyunçu oldu.",
+          NewsMain2:
+          "Gasol hər iki Buğalar mövsümündə All-Star oldu, dörd il ərzində ilk All-Star seçimləri oldu, 2015-ci ildə qardaşı Markın qarşısında tarixi NBA-da All-Star oyununa başladı, All-NBA oldu, karyerasında ən yaxşı 46 xal topladı.",
         NewsView: "m baxış",
         NewsDate: "17 Sentyabr 2023 • 01:10",
         GalleryHeader1: "Bütün Yayı Buğalar: Titan Divarları",
@@ -173,6 +175,8 @@ i18n.use(initReactI18next).init({
           "Remembering Pau Gasol's time as a Chicago Bull as he prepares to enter Basketball Hall of Fame.",
         NewsMain1:
           "Gasol was an All-Star in both his Bulls seasons, his first All-Star selections in four years, started the 2015 All-Star game opposite his brother Marc in an historic NBA first, was All-NBA, scored a career best 46 points, led the league in double-doubles and became the fourth player in league history older than 35 with multiple triple doubles in one season.",
+          NewsMain2:
+          "Gasol was an All-Star in both his Bulls seasons, his first All-Star selections in four years, started the 2015 All-Star game opposite his brother Marc in an historic NBA first, was All-NBA, scored a career best 46 points. his first All-Star selections in four years, started the 2015 All-Star game opposite his brother Marc",
         NewsView: "k views",
         NewsDate: "Sep 17, 2023 • 1:10 PM",
         GalleryHeader1: "Bulls All Summer: Titan Walls",
