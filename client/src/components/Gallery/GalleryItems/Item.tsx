@@ -24,7 +24,7 @@ const Item: React.FC<ItemImg> = ({ itemImg, item_title, item_content,row_reverse
               <h2>{item_title}</h2>
             </div>
             <p className="content">{item_content}</p>
-          <Link className="link" to='/'>{t("SeeMore")}</Link>
+          <Link className="link" to='/news'>{t("SeeMore")}</Link>
           </div>
         </div>
       </div>

@@ -1,35 +1,37 @@
 @import url("../../App.css");
 
-.about{
+.about {
   margin-top: 30px;
 }
 
-.about>.title{
+.about > .title {
   text-align: center;
   font: var(--secular-28);
   color: var(--white);
   margin-bottom: 20px;
 }
-.about>.container>.about-wrapper{
+.about > .container > .about-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
-.about>.container>.about-wrapper>.about-left>img{
+.about > .container > .about-wrapper > .about-left > img {
   width: 100%;
 }
-.about>.container>.about-wrapper>.about-right>.paragraphs{
-  
+.about > .container > .about-wrapper > .about-right > .paragraphs {
   color: var(--white);
   font: var(--lexend-16);
   font-weight: lighter;
- 
-  
-  >p{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+
+  > p {
     margin-bottom: 12px;
     width: 100%;
   }
-  >.link{
+  > .link {
     color: var(--red);
     font: var(--secular-20);
     text-decoration: none;
@@ -37,14 +39,19 @@
   }
 }
 
-@media(max-width: 1100px){
-  .about>.container>.about-wrapper{
+@media (max-width: 1100px) {
+  .about > .container > .about-wrapper {
     grid-template-columns: 1fr;
   }
 }
 
-@media(max-width: 500px){
-  .about>.container>.about-wrapper>.about-right>.paragraphs>p:nth-child(2){
+@media (max-width: 500px) {
+  .about
+    > .container
+    > .about-wrapper
+    > .about-right
+    > .paragraphs
+    > p:nth-child(2) {
     display: none;
   }
 }

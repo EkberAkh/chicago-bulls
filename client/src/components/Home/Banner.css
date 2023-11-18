@@ -40,7 +40,29 @@
 .banner > .container > .banner-inner > .banner-right {
   flex: 1.8;
 }
-
+@media (max-width: 2800px){
+  .banner > .container > .banner-inner{
+    padding-top: 120px;
+  }
+  .banner > .container > .banner-inner > .banner-left {
+    > p {
+      font: var(--secular-64);
+    }
+    > button {
+      font: var(--secular-38);
+    }
+  }
+}
+@media (max-width: 1500px){
+  .banner > .container > .banner-inner{
+    padding-top: 60px;
+  }
+  .banner > .container > .banner-inner > .banner-left {
+    > p {
+      font: var(--secular-56);
+    }}
+  
+}
 @media (max-width: 1290px) {
   .banner > .container > .banner-inner > .banner-left {
     > p {
