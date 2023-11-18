@@ -1,5 +1,5 @@
 import "./Products.css";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import axiosInstance from "../../../axios";
@@ -18,19 +18,14 @@ import longshirt from "../../../assets/longshirt.png";
 import shorts from "../../../assets/shorts.png";
 import tshirt from "../../../assets/tshirt.png";
 
-
 interface Product {
   img: any;
   price: number;
   id: number;
   description: string;
   rating: number;
-
+  category: string;
 }
-
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -50,15 +45,68 @@ function getItem(
 
 const rootSubmenuKeys = ["sub1", "sub2", "sub3", "sub4", "sub5", "sub6"];
 
-
-
-
-
 export const Products: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [productFiltered, setProductFiltered] = useState<Product[]>([]);
+  const [filterValue, setFilterValue] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const productsPerPage = 9;
+
+  const handleChange = (value: string) => {
+    let sortedProducts: Product[] = [...products];
+    let filteredSortedProducts: Product[] = [...productFiltered];
+
+    if (productFiltered.length === 0) {
+      switch (value) {
+        case "least-stars":
+          sortedProducts.sort((a, b) => a.rating - b.rating);
+          setProducts(sortedProducts);
+          break;
+        case "most-stars":
+          sortedProducts.sort((a, b) => b.rating - a.rating);
+          setProducts(sortedProducts);
+          break;
+        case "most-price":
+          sortedProducts.sort((a, b) => b.price - a.price);
+          setProducts(sortedProducts);
+          break;
+        case "least-price":
+          sortedProducts.sort((a, b) => a.price - b.price);
+          setProducts(sortedProducts);
+          break;
+        default:
+          console.log(value);
+          break;
+      }
+    } else {
+      switch (value) {
+        case "least-stars":
+          filteredSortedProducts.sort((a, b) => a.rating - b.rating);
+          setProductFiltered(filteredSortedProducts);
+          setFilterValue(value);
+          break;
+        case "most-stars":
+          filteredSortedProducts.sort((a, b) => b.rating - a.rating);
+          setProductFiltered(filteredSortedProducts);
+          setFilterValue(value);
+          break;
+        case "most-price":
+          filteredSortedProducts.sort((a, b) => b.price - a.price);
+          setProductFiltered(filteredSortedProducts);
+          setFilterValue(value);
+          break;
+        case "least-price":
+          filteredSortedProducts.sort((a, b) => a.price - b.price);
+          setProductFiltered(filteredSortedProducts);
+          setFilterValue(value);
+          break;
+        default:
+          console.log(value);
+          break;
+      }
+    }
+  };
 
   useEffect(() => {
     axiosInstance
@@ -113,24 +161,13 @@ export const Products: FC = () => {
   ];
 
   const onOpenChange: MenuProps["onOpenChange"] = (keys) => {
-    const latestOpenKey = keys.find(
-      (key) => openKeys.indexOf(key) === -1
-    );
-    if (
-      latestOpenKey &&
-      rootSubmenuKeys.indexOf(latestOpenKey!) === -1
-    ) {
+    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
+    if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
       setOpenKeys(keys);
     } else {
-      setOpenKeys(
-        latestOpenKey ? [latestOpenKey] : []
-      );
+      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
     }
   };
-
-  const totalPages = Math.ceil(
-    products.length / productsPerPage
-  );
 
   const handlePageChange = (page: number) => {
     const productsContainer = document.getElementById("products-container");
@@ -160,6 +197,82 @@ export const Products: FC = () => {
     return images[productId % images.length];
   };
 
+  const totalPages = Math.ceil(
+    productFiltered.length === 0
+      ? products.length / productsPerPage
+      : productFiltered.length / productsPerPage
+  );
+  const filteredPaginatedProducts = productFiltered.slice(
+    (currentPage - 1) * productsPerPage,
+    currentPage * productsPerPage
+  );
+
+  const filterMenuProducts = (filteredAllProducts: Product[]) => {
+    switch (filterValue) {
+      case "least-stars":
+        filteredAllProducts.sort((a, b) => a.rating - b.rating);
+        setProductFiltered(filteredAllProducts);
+        break;
+      case "most-stars":
+        filteredAllProducts.sort((a, b) => b.rating - a.rating);
+        setProductFiltered(filteredAllProducts);
+        break;
+      case "most-price":
+        filteredAllProducts.sort((a, b) => b.price - a.price);
+        setProductFiltered(filteredAllProducts);
+        break;
+      case "least-price":
+        filteredAllProducts.sort((a, b) => a.price - b.price);
+        setProductFiltered(filteredAllProducts);
+        break;
+      default:
+        // console.log(filterValue);
+        break;
+    }
+  }
+
+  const handleMenuChange: MenuProps["onSelect"] = ({ selectedKeys }) => {
+    let filteredProducts: Product[] = [...products];
+
+    switch (selectedKeys[0]) {
+      case "1":
+        filteredProducts = filteredProducts.filter(
+          (product) => product.category === "Men"
+        );
+        setProductFiltered(filteredProducts);
+        filterMenuProducts(filteredProducts);
+        break;
+      case "2":
+        filteredProducts = filteredProducts.filter(
+          (product) => product.category === "Kids"
+        );
+        setProductFiltered(filteredProducts);
+        filterMenuProducts(filteredProducts);
+        break;
+      case "3":
+        filteredProducts = filteredProducts.filter(
+          (product) => product.category === "Women"
+        );
+        setProductFiltered(filteredProducts);
+        filterMenuProducts(filteredProducts);
+        break;
+      case "3":
+        filteredProducts = filteredProducts.filter(
+          (product) => product.category === "Toys"
+        );
+        setProductFiltered(filteredProducts);
+        filterMenuProducts(filteredProducts);
+        break;
+      default:
+        // console.log(selectedKeys);
+        break;
+    }
+  };
+
+  products.forEach((product) => {
+    console.log(product.category);
+  });
+
   return (
     <Element name="shopping">
       <div className="container" id="products-container">
@@ -170,6 +283,7 @@ export const Products: FC = () => {
             openKeys={openKeys}
             onOpenChange={onOpenChange}
             items={choices}
+            onSelect={handleMenuChange}
           />
         </div>
         <div className="items">
@@ -181,36 +295,44 @@ export const Products: FC = () => {
               style={{ width: 160 }}
               onChange={handleChange}
               options={[
-                { value: "top-seller", label: t("TOPSELLER") },
                 { value: "most-stars", label: t("MOSTSTARS") },
+                { value: "least-stars", label: t("LEAST STARS") },
                 { value: "most-price", label: t("MOSTPRICE") },
                 { value: "least-price", label: t("LEASTPRICE") },
               ]}
             />
           </div>
           {loading ? (
-            <div className="loading">Loading...</div>
+            <div className="loading">LOADING...</div>
           ) : (
             <>
               <div className="products">
-                {paginatedProducts.map((product) => (
-                  <ProductItem
-                    key={product.id}
-                    price={product.price}
-                    productImg={getImageForProduct(product.id)}
-                    rating={product.rating}
-                    about={product.description}
-                  />
-                ))}
+                {productFiltered.length === 0
+                  ? paginatedProducts.map((product) => (
+                      <ProductItem
+                        key={product.id}
+                        price={product.price}
+                        productImg={getImageForProduct(product.id)}
+                        rating={product.rating}
+                        about={product.description}
+                      />
+                    ))
+                  : filteredPaginatedProducts.map((product) => (
+                      <ProductItem
+                        key={product.id}
+                        price={product.price}
+                        productImg={getImageForProduct(product.id)}
+                        rating={product.rating}
+                        about={product.description}
+                      />
+                    ))}
               </div>
               <div className="pagination">
                 {Array.from({ length: totalPages }).map((_, index) => (
                   <button
                     key={index}
                     onClick={() => handlePageChange(index + 1)}
-                    className={
-                      currentPage === index + 1 ? "active" : ""
-                    }
+                    className={currentPage === index + 1 ? "active" : ""}
                   >
                     {index + 1}
                   </button>
@@ -223,6 +345,3 @@ export const Products: FC = () => {
     </Element>
   );
 };
-
-
-
