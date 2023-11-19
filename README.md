@@ -31,7 +31,7 @@ Users should be able to:
 
 ![Chicago Bulls Site](./client/src/assets/Chicago%20Bulls%20Basketball.png)
 
-## My process
+## Process
 
 ### Built with
   - VITE
