@@ -105,7 +105,9 @@ export const Header = () => {
         <div className="container">
           <div className="header-items">
             <div className="header-logo">
-              <img src={logo} alt="logo" />
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
             </div>
             <nav>
               <ul>
@@ -163,20 +165,24 @@ export const Header = () => {
         <nav>
           <ul>
             <li>
-              {isSmallScreen && (
-               token ?  <div className="profil-about">
-               <h3>{token.fullName}</h3>
-               <p>{token.email}</p>
-             </div> :
-              <div className="login-reg-wrapper">
-                <Link to='/register' className="login-register">{t("Register")}</Link>
-                <Link to='/login' className="login-register">{t("Login")}</Link>
-
-              </div>
-             
-              )}
+              {isSmallScreen &&
+                (token ? (
+                  <div className="profil-about">
+                    <h3>{token.fullName}</h3>
+                    <p>{token.email}</p>
+                  </div>
+                ) : (
+                  <div className="login-reg-wrapper">
+                    <Link to="/register" className="login-register">
+                      {t("Register")}
+                    </Link>
+                    <Link to="/login" className="login-register">
+                      {t("Login")}
+                    </Link>
+                  </div>
+                ))}
             </li>
-           
+
             <li>
               <NavLink id="home" className="link" to="/">
                 {t("HOME")}
@@ -204,7 +210,11 @@ export const Header = () => {
               </NavLink>
             </li>
             <li>
-            {token && <button onClick={handleLogout} className="logout">{t("Logout")}</button>}
+              {token && (
+                <button onClick={handleLogout} className="logout">
+                  {t("Logout")}
+                </button>
+              )}
             </li>
           </ul>
         </nav>
