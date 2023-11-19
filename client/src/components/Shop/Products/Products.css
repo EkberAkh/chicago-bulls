@@ -182,4 +182,6 @@
     padding: 20px;
     color: #fff;
   }
-  
+#products-container>.items>.sort-item>.ant-select {
+ max-width: 130px;
+}
