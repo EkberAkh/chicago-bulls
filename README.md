@@ -39,6 +39,7 @@ Users should be able to:
   - TYPESCRIPT
   - CSS3
   - NODEJS
+  - EXPRESS JS
   - POSTGRESQL
 
 
