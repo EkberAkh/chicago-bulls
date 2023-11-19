@@ -232,3 +232,11 @@
   }
 } 
 
+.upcoming
+  > .container
+  > .card-section
+  > .cards
+  > .react-multi-carousel-list
+  > .react-multi-carousel-dot-list> .react-multi-carousel-dot--active button {
+    background-color: #fff;
+  }

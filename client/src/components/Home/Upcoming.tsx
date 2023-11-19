@@ -60,7 +60,7 @@ const Upcoming = () => {
     
         <div className="cards">
 
-          <Carousel arrows={!isSmallScreen} partialVisbile={false} draggable={true} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true} responsive={responsive}>
+          <Carousel  arrows={!isSmallScreen} partialVisbile={false} draggable={true} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true} responsive={responsive}>
 
 
 
