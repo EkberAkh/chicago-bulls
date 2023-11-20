@@ -302,7 +302,7 @@ export const Products: FC = () => {
             <Space wrap />
             <Select
               defaultValue={t("ALL")}
-              style={{ width: 160 }}
+              style={{ width: 130 }}
               onChange={handleChange}
               options={[
                 { value: "most-stars", label: t("MOSTSTARS") },

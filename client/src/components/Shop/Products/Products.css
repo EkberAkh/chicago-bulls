@@ -271,7 +271,6 @@
   }
 }
 
-
 @media (max-width: 580px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
@@ -298,7 +297,7 @@
     font: var(--secular-10);
     margin-left: -24px;
   }
-
-#products-container>.items>.sort-item>.ant-select {
- max-width: 130px;
+}
+#products-container > .items > .sort-item > .ant-select {
+  max-width: 130px;
 }
