@@ -10,13 +10,6 @@
     border-radius: 5px;
     position: relative;
 
-    > .product-cart {
-      width: 30px;
-      position: absolute;
-      right: 15px;
-      top: 10px;
-    }
-
     > .product-element {
       width: 100%;
     }
