@@ -17,15 +17,10 @@ import cap from "../../../assets/cap.png";
 import longshirt from "../../../assets/longshirt.png";
 import shorts from "../../../assets/shorts.png";
 import tshirt from "../../../assets/tshirt.png";
-
-interface Product {
-  img: any;
-  price: number;
-  id: number;
-  description: string;
-  rating: number;
-  category: string;
-}
+import { Product } from "../../../models";
+import blackCart from "../../../assets/shopping-cart-black.png";
+import { useCart } from "../../Context";
+import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -52,6 +47,7 @@ export const Products: FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const productsPerPage = 9;
+  const context = useCart();
 
   const handleChange = (value: string) => {
     let sortedProducts: Product[] = [...products];
@@ -171,9 +167,9 @@ export const Products: FC = () => {
 
   const handlePageChange = (page: number) => {
     const productsContainer = document.getElementById("products-container");
-  if (productsContainer) {
-    productsContainer.scrollIntoView({ behavior: "smooth" });
-  }
+    if (productsContainer) {
+      productsContainer.scrollIntoView({ behavior: "smooth" });
+    }
     setCurrentPage(page);
   };
 
@@ -229,7 +225,7 @@ export const Products: FC = () => {
         // console.log(filterValue);
         break;
     }
-  }
+  };
 
   const handleMenuChange: MenuProps["onSelect"] = ({ selectedKeys }) => {
     let filteredProducts: Product[] = [...products];
@@ -256,7 +252,7 @@ export const Products: FC = () => {
         setProductFiltered(filteredProducts);
         filterMenuProducts(filteredProducts);
         break;
-      case "3":
+      case "4":
         filteredProducts = filteredProducts.filter(
           (product) => product.category === "Toys"
         );
@@ -269,9 +265,23 @@ export const Products: FC = () => {
     }
   };
 
-  products.forEach((product) => {
-    console.log(product.category);
-  });
+  const accessToken = localStorage.getItem('acces_token');
+
+  const errorElement = document.querySelector(".notaccount");
+  const body = document.querySelector("body");
+  const background = document.querySelector(".product-back");
+
+  const handleCartError = () => {
+    errorElement?.classList.remove('d-none');
+    body?.classList.add('overflow-hidden');
+    background?.classList.add('d-block');
+  }
+
+  const exitCartError = () => {
+    errorElement?.classList.add('d-none');
+    body?.classList.remove('overflow-hidden');
+    background?.classList.remove('d-block');
+  }
 
   return (
     <Element name="shopping">
@@ -309,22 +319,38 @@ export const Products: FC = () => {
               <div className="products">
                 {productFiltered.length === 0
                   ? paginatedProducts.map((product) => (
-                      <ProductItem
-                        key={product.id}
-                        price={product.price}
-                        productImg={getImageForProduct(product.id)}
-                        rating={product.rating}
-                        about={product.description}
-                      />
+                      <div className="product-item">
+                        <ProductItem
+                          key={product.id}
+                          price={product.price}
+                          productImg={getImageForProduct(product.id)}
+                          rating={product.rating}
+                          about={product.description}
+                        />
+                        <button
+                          onClick={ accessToken ? (()=> context?.addToCart(product.id, product)) : handleCartError }
+                          className="product-cart"
+                        >
+                          <img src={blackCart} />
+                        </button>
+                      </div>
                     ))
                   : filteredPaginatedProducts.map((product) => (
-                      <ProductItem
-                        key={product.id}
-                        price={product.price}
-                        productImg={getImageForProduct(product.id)}
-                        rating={product.rating}
-                        about={product.description}
-                      />
+                      <div className="product-item">
+                        <ProductItem
+                          key={product.id}
+                          price={product.price}
+                          productImg={getImageForProduct(product.id)}
+                          rating={product.rating}
+                          about={product.description}
+                        />
+                        <button
+                          onClick={ accessToken ? (()=> context?.addToCart(product.id, product)) : handleCartError }
+                          className="product-cart"
+                        >
+                          <img src={blackCart} />
+                        </button>
+                      </div>
                     ))}
               </div>
               <div className="pagination">
@@ -340,6 +366,12 @@ export const Products: FC = () => {
               </div>
             </>
           )}
+        </div>
+        <div className="product-back d-none"></div>
+        <div className="notaccount d-none">
+          <p className="header">You must have an account!</p>
+          <Link className="link" to="/login" onClick={exitCartError}>Login for add to cart anything</Link>
+          <button onClick={exitCartError}>Continue without account</button>
         </div>
       </div>
     </Element>

@@ -5,12 +5,15 @@ import App from "./App.tsx";
 import "./index.css";
 import "./i18n.ts";
 import { ChakraProvider } from "@chakra-ui/react";
-// import 'antd/dist/antd.css';
+import { CartProvider } from "./components/Context/context.tsx";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <ChakraProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </ChakraProvider>
     </BrowserRouter>
   </StrictMode>
