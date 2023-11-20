@@ -13,6 +13,7 @@
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
 - [Authors](#authors)
+- [Linkedin QR Codes](#linkedin-qr-codes)
 
 ## Figma file
 [Chicago Bulls Figma file](https://www.figma.com/file/cBN5lNRXfpZKQynB92eXzR/Chicago-Bulls-Basketball?type=design&node-id=0%3A1&mode=design&t=Zgdr8ljQEDLSVnae-1).
@@ -31,7 +32,7 @@ Users should be able to:
 
 ![Chicago Bulls Site](./client/src/assets/Chicago%20Bulls%20Basketball.png)
 
-## My process
+## Process
 
 ### Built with
   - VITE
@@ -39,6 +40,7 @@ Users should be able to:
   - TYPESCRIPT
   - CSS3
   - NODEJS
+  - EXPRESS JS
   - POSTGRESQL
 
 
@@ -125,3 +127,7 @@ Feel free to explore these resources for in-depth information and tutorials on t
 - [Akbar Akhundov](https://www.linkedin.com/in/akbar-akhundov-93697524b/)
 - [Hazrat Ahmadzada](https://www.linkedin.com/in/hazrat-ahmadzada-927b24252/)
 - [Adham Poladzada](https://www.linkedin.com/in/adham-poladzadeh-a46621242/)
+
+## Linkedin QR Codes
+![Chicago Bulls Site](./client/src/assets/qr.jpg)
+

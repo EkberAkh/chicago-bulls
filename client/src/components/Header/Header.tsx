@@ -168,7 +168,9 @@ export const Header = () => {
         <div className="container">
           <div className="header-items">
             <div className="header-logo">
-              <img src={logo} alt="logo" />
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
             </div>
             <nav>
               <ul>

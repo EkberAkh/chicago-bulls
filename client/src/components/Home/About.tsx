@@ -32,7 +32,7 @@ const About: React.FC<AboutProps> = ({about_img,title,seeMore}) => {
             <p>
             {t("AboutMain3")}
             </p>
-           {seeMore &&  <Link className='link' to="/news">{t("SeeMore")}</Link>}
+           {seeMore &&  <Link className='link' to="/team">{t("SeeMore")}</Link>}
             </div>
           </div>
           </div>

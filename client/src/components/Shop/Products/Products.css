@@ -298,4 +298,7 @@
     font: var(--secular-10);
     margin-left: -24px;
   }
+
+#products-container>.items>.sort-item>.ant-select {
+ max-width: 130px;
 }
