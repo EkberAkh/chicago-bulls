@@ -1,10 +1,9 @@
 import React from "react";
 import "./ProductItem.css";
-import blackCart from "../../../assets/shopping-cart-black.png";
 
 import { Rate } from "antd";
 
-interface ProductItemProps {
+export interface ProductItemProps {
   productImg: any;
   price: number;
   about: string;
@@ -20,7 +19,6 @@ const ProductItem: React.FC<ProductItemProps> = ({
   return (
     <div className="product-item">
       <div className="top">
-        <img src={blackCart} className="product-cart" />
         <img src={productImg} className="product-element" />
       </div>
       <div className="bottom">
