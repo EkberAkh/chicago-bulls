@@ -1,44 +1,34 @@
-const bcrypt = require("bcrypt");
-const Cart = require("../models/cart");
-const jwt = require("jsonwebtoken");
+const { Cart } = require("../models/cart");
 
-async function cartItems(req, res) {
+const addToCart = async (req, res) => {
   try {
-    const { productId, productTitle, productPrice, productCategory } = req.body;
+    const { userId, productId, count } = req.body;
 
-    if (!productId || !productTitle || !productPrice || !productCategory) {
-      return res.status(400).json({ error: "Missing required fields" });
+    let cartItem = await Cart.findOne({
+      where: {
+        userId: userId,
+        productId: productId,
+      },
+    });
+
+    if (cartItem) {
+      cartItem.count += count;
+      await cartItem.save();
+    } else {
+      await Cart.create({
+        userId: userId,
+        productId: productId,
+        count: count,
+      });
     }
 
-    const token = req.headers.authorization;
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    const userId = decodedToken.userId;
-
-    let userCart = await Cart.findOne({ userId });
-
-    if (!userCart) {
-      userCart = new Cart({ userId, items: [] });
-    }
-
-    const cartItem = {
-      productId,
-      productTitle,
-      productPrice,
-      productCategory,
-    };
-    userCart.items.push(cartItem);
-
-    await userCart.save();
-
-    res
-      .status(201)
-      .json({ message: "Product added to cart successfully", cart: userCart });
+    res.status(201).json({ message: "Product added to cart successfully." });
   } catch (error) {
     console.error("Error adding product to cart:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Internal server error" });
   }
-}
+};
 
 module.exports = {
-  cartItems,
+  addToCart,
 };
