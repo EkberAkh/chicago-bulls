@@ -1,25 +1,22 @@
-const { Sequelize,DataTypes } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = require("../database/index");
 
 const Cart = sequelize.define(
   "Cart",
   {
-    productId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
-    productTitle: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    userId: {
+      type: DataTypes.INTEGER,
     },
-    productPrice: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
+    productId: {
+      type: DataTypes.INTEGER,
     },
-    productCategory: {
-      type: DataTypes.STRING,
-      allowNull: true,
+    count: {
+      type: DataTypes.INTEGER,
     },
   },
   {
