@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, createContext, useContext, useState, useMemo, useEffect } from "react"
+import { FC, PropsWithChildren, createContext, useContext, useState, useMemo } from "react"
 import { Product } from "../../models";
 
 

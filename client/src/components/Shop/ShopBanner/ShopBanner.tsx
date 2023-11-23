@@ -1,6 +1,6 @@
 import shopBg from '../../../assets/shop-bg.png'
 import './ShopBanner.css'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 import { useTranslation } from 'react-i18next'
 
 
