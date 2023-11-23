@@ -306,7 +306,7 @@ export const Products: FC = () => {
               onChange={handleChange}
               options={[
                 { value: "most-stars", label: t("MOSTSTARS") },
-                { value: "least-stars", label: t("LEAST STARS") },
+                { value: "least-stars", label: t("LEASTSTARS") },
                 { value: "most-price", label: t("MOSTPRICE") },
                 { value: "least-price", label: t("LEASTPRICE") },
               ]}
