@@ -9,7 +9,7 @@ type AboutProps = {
   seeMore: boolean
 };
 
-const About: React.FC<AboutProps> = ({about_img,title,seeMore}) => {
+const About: React.FC<AboutProps> = ({about_img,seeMore}) => {
   const {t} = useTranslation();
   return (
     <section className="about">

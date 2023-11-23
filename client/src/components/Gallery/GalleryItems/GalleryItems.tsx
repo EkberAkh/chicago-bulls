@@ -1,4 +1,3 @@
-import React from "react";
 import "./GalleryItems.css";
 import Item from "./Item";
 import item_img from "../../../assets/gallery-item.png";
