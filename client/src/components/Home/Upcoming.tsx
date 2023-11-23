@@ -1,8 +1,6 @@
 import React from 'react';
 import './Upcoming.css'
 import bulls from "../../assets/bulls.png";
-import thunder from "../../assets/thunder.png";
-import nuggets from "../../assets/nuggets.png";
 import bucks from "../../assets/bucks.png";
 
 

@@ -5,7 +5,6 @@ import {
   useContext,
   useState,
   useMemo,
-  useEffect,
 } from "react";
 import { Product } from "../../models";
 import { jwtDecode } from "jwt-decode";
