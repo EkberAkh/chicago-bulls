@@ -43,6 +43,11 @@ export const Header = () => {
   function hamburgerHandler() {
     setClose(!close);
 
+    if(cartClose) {
+      setCartClose(false);
+      cartBtnHandler();
+    }
+
     const hamburgerScreen = document.querySelector(".hamburger-screen");
     const background = document.querySelector(".menu-back");
     const body = document.querySelector("body");
@@ -76,8 +81,14 @@ export const Header = () => {
   function cartBtnHandler() {
     setCartClose(!cartClose);
 
+    if(close) {
+      setClose(false);
+      hamburgerHandler();
+    }
+
     const cartScreen = document.querySelector(".cart-screen");
-    const background = document.querySelector(".cart-back");
+    // const background = document.querySelector(".cart-back");
+    const background = document.querySelector(".menu-back");
     const body = document.querySelector("body");
     body?.classList.toggle("overflow-hidden");
     // cartScreen?.classList.toggle('menu-slide-in');
@@ -227,7 +238,7 @@ export const Header = () => {
         </div>
       </header>
       <div className="menu-back d-none"></div>
-      <div className="cart-back d-none"></div>
+      {/* <div className="cart-back d-none"></div> */}
       <div className="hamburger-screen">
         <nav>
           <ul>

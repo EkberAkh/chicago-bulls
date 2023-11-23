@@ -13,7 +13,7 @@ const About: React.FC<AboutProps> = ({about_img,title,seeMore}) => {
   const {t} = useTranslation();
   return (
     <section className="about">
-        <h2 className="title">{title}</h2>
+        <h2 className="title">{t("AboutUs")}</h2>
         <div className="container">
           <div className="about-wrapper">
 
