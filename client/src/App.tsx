@@ -8,7 +8,6 @@ import News from "./pages/News";
 import Shop from "./pages/Shop";
 import { Footer, Header, Register, Login } from "./components";
 import { AnimatePresence } from "framer-motion";
-
 function App() {
   const location = useLocation();
 

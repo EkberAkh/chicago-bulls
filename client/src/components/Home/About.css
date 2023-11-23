@@ -9,6 +9,7 @@
   font: var(--secular-28);
   color: var(--white);
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 .about > .container > .about-wrapper {
   display: grid;
@@ -24,7 +25,6 @@
   font-weight: lighter;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 100%;
 
   > p {

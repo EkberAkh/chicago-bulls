@@ -56,7 +56,7 @@ header {
   font-size: 18px;
   font-weight: bold;
 }
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-customize-input
   )
   .ant-select-selector {
@@ -67,23 +67,23 @@ header {
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select .ant-select-arrow {
+:where(.css-dev-only-do-not-override-1g853jt).ant-select .ant-select-arrow {
   color: #fff;
 }
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select {
+:where(.css-dev-only-do-not-override-1g853jt).ant-select {
   max-width: 60px;
 }
 
 :where(
-    .css-dev-only-do-not-override-1adbn6x
+    .css-dev-only-do-not-override-1g853jt
   ).ant-select-single.ant-select-show-arrow
   .ant-select-selection-item,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select-single.ant-select-open
+:where(.css-dev-only-do-not-override-1g853jt).ant-select-single.ant-select-open
   .ant-select-selection-placeholder {
   color: #fff;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-customize-input
   )
   .ant-select-selector {
@@ -91,21 +91,21 @@ header {
   font-size: 13px;
 }
 
-.ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+.ant-select-focused:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
   .ant-select-selector {
   border-color: #fff;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
   .ant-select-selector {
   border-color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select-dropdown
+:where(.css-dev-only-do-not-override-1g853jt).ant-select-dropdown
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   background-color: var(--red);
   color: #fff;
@@ -128,7 +128,7 @@ header {
   right: 0;
   height: 100%;
   width: 40%;
-  z-index: 1002;
+  z-index: 900;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -194,7 +194,7 @@ header {
   height: 100%;
   width: 100%;
   background-color: black;
-  z-index: 1002;
+  z-index: 899;
   opacity: 0.6;
 }
 .cart-back {
@@ -302,7 +302,7 @@ header {
   }
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select-single
+:where(.css-dev-only-do-not-override-1g853jt).ant-select-single
   .ant-select-selector
   .ant-select-selection-item {
   padding: 0;
@@ -523,4 +523,7 @@ header {
     font: var(--lexend-20-light);
     text-align: center;
   }
+}
+.container > .header-items > .header-end >div>.css-r6z5ec{
+  z-index: 5000;
 }
