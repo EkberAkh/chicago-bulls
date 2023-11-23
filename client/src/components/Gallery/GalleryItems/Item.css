@@ -4,12 +4,15 @@
 .item-inner{
     display: flex;
     gap: 30px;
+    
+    
+    
 
 }
 .item-inner-reverse{
   
     flex-direction: row-reverse;
-
+    justify-content: space-between;
 }
 
 .item>.item-inner>.item-left>img{

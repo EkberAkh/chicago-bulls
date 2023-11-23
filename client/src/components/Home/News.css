@@ -9,6 +9,7 @@
     font: var(--secular-28);
     color: var(--white);
     text-transform: uppercase;
+    margin-bottom:16px
   }
   
   .news > .container > .news-wrapper {
@@ -49,6 +50,9 @@
       justify-content: space-between;
     }
   
+  }
+  .news > .container > .news-wrapper > .news-card >.news-img{
+    margin-bottom:14px
   }
   .news > .container > .news-wrapper > .news-card >.news-img>img{
     width: 100%;
