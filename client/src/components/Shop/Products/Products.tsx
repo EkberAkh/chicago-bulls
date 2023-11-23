@@ -5,7 +5,7 @@ import { Menu } from "antd";
 import axiosInstance from "../../../axios";
 
 import { FC } from "react";
-import { Select, Space, Rate } from "antd";
+import { Select, Space } from "antd";
 import { Element } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import ProductItem from "./ProductItem";
