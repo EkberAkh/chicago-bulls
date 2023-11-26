@@ -53,6 +53,7 @@ export const Header = () => {
     const background = document.querySelector(".menu-back");
     const body = document.querySelector("body");
     body?.classList.toggle("overflow-hidden");
+    // hamburgerScreen?.classList.toggle('menu-slide-in');
     console.log(close);
 
     if (!close) {
