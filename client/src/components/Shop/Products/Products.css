@@ -25,8 +25,8 @@
 :where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   > .ant-menu
   .ant-menu-item-selected {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--red)!important;
+  color: var(--white)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
@@ -45,7 +45,7 @@
   > .ant-menu
   .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
   > .ant-menu-submenu-title:hover {
-  color: var(--red);
+  color: var(--red)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
@@ -55,7 +55,7 @@
   > .ant-menu
   .ant-menu-submenu-selected
   > .ant-menu-submenu-title {
-  color: var(--red);
+  color: var(--red)!important;
 }
 
 #products-container {
@@ -96,38 +96,38 @@
     .ant-select-customize-input
   )
   .ant-select-selector {
-  background-color: transparent;
-  color: var(--white);
-  font: var(--lexend-12-light);
+  background-color: transparent!important;
+  color: var(--white)!important;
+  font: var(--lexend-12-light)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select .ant-select-arrow {
-  color: var(--white);
+  color: var(--white)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select-single.ant-select-open
   .ant-select-selection-item {
-  color: rgba(255, 255, 255, 0.758);
+  color: rgba(255, 255, 255, 0.758)!important;
 }
 
 .ant-select-focused:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
   .ant-select-selector {
-  border-color: var(--red);
+  border-color: var(--red)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
   .ant-select-selector {
-  border-color: var(--red);
+  border-color: var(--red)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select-dropdown
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   color: var(--white);
-  background-color: var(--red);
+  background-color: var(--red)!important;
 }
 
 .pagination {
@@ -257,8 +257,8 @@
 
   :where(.css-dev-only-do-not-override-1g853jt)[class^="ant-menu"]::before,
   :where(.css-dev-only-do-not-override-1g853jt)[class*=" ant-menu"]::before {
-    content: "";
-    display: none;
+    content: ""!important;
+    display: none!important;
   }
 
   .product-cart {
