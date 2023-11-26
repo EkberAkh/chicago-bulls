@@ -20,38 +20,38 @@
   font: var(--lexend-12-light);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   .ant-menu-item-selected,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   > .ant-menu
   .ant-menu-item-selected {
   background-color: var(--red);
   color: var(--white);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   .ant-menu-item:not(.ant-menu-item-selected):not(
     .ant-menu-submenu-selected
   ):hover,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   > .ant-menu
   .ant-menu-item:not(.ant-menu-item-selected):not(
     .ant-menu-submenu-selected
   ):hover,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
   > .ant-menu-submenu-title:hover,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   > .ant-menu
   .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
   > .ant-menu-submenu-title:hover {
   color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   .ant-menu-submenu-selected
   > .ant-menu-submenu-title,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-menu-light
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
   > .ant-menu
   .ant-menu-submenu-selected
   > .ant-menu-submenu-title {
@@ -92,7 +92,7 @@
   width: 75%;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-customize-input
   )
   .ant-select-selector {
@@ -101,30 +101,30 @@
   font: var(--lexend-12-light);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select .ant-select-arrow {
+:where(.css-dev-only-do-not-override-1g853jt).ant-select .ant-select-arrow {
   color: var(--white);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select-single.ant-select-open
+:where(.css-dev-only-do-not-override-1g853jt).ant-select-single.ant-select-open
   .ant-select-selection-item {
   color: rgba(255, 255, 255, 0.758);
 }
 
-.ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+.ant-select-focused:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
   .ant-select-selector {
   border-color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(
+:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
   .ant-select-selector {
   border-color: var(--red);
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-select-dropdown
+:where(.css-dev-only-do-not-override-1g853jt).ant-select-dropdown
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   color: var(--white);
   background-color: var(--red);
@@ -255,8 +255,8 @@
     width: 100%;
   }
 
-  :where(.css-dev-only-do-not-override-1adbn6x)[class^="ant-menu"]::before,
-  :where(.css-dev-only-do-not-override-1adbn6x)[class*=" ant-menu"]::before {
+  :where(.css-dev-only-do-not-override-1g853jt)[class^="ant-menu"]::before,
+  :where(.css-dev-only-do-not-override-1g853jt)[class*=" ant-menu"]::before {
     content: "";
     display: none;
   }
