@@ -9,8 +9,6 @@ import {
 } from "react";
 
 import { Product } from "../../models";
-import { jwtDecode } from "jwt-decode";
-import axios from "../../axios";
 
 interface CartContextProps {
   cart: Product[];
@@ -21,14 +19,6 @@ interface CartContextProps {
   removeAllProducts: () => void;
   removeProduct: (productId: number) => void;
   addToCart: (productId: number, product: Product) => void;
-}
-
-interface JwtDecoded {
-  email: string;
-  userId: string;
-  fullName: string;
-  exp: number;
-  iat: number;
 }
 
 export const CartContext = createContext<CartContextProps | null>(null);
@@ -44,8 +34,6 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
 
   //   const [token, setToken] = useState<JwtDecoded | null>(null);
 
-  const accessToken = localStorage.getItem("acces_token");
-  const token = jwtDecode<JwtDecoded>(accessToken!);
 
   //   useEffect(() => {
   //     if (accessToken) {
@@ -64,27 +52,12 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
         updatedProductCount[productId] =
           (updatedProductCount[productId] || 0) + 1;
         setProductCount(updatedProductCount);
-        const response = await axios.post("/add-to-cart", {
-          data: {
-            userId: token?.userId,
-            productId: productId,
-            count: productCount,
-          },
-        });
-        console.log(response.data);
       },
       decrement: async (productId: number) => {
         setCartCount(cartCount - 1);
         const updatedProductCount = { ...productCount };
         updatedProductCount[productId] -= 1;
         setProductCount(updatedProductCount);
-        const response = await axios.delete("cart/remove", {
-          data: {
-            userId: token?.userId,
-            productId,
-          },
-        });
-        console.log(response.data);
       },
       removeAllProducts: () => {
         setCart([]);
@@ -97,13 +70,6 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
         const updatedProductCount = { ...productCount };
         delete updatedProductCount[productId];
         setProductCount(updatedProductCount);
-        const response = await axios.delete("cart/remove", {
-          data: {
-            userId: token?.userId,
-            productId,
-          },
-        });
-        console.log(response.data);
       },
       addToCart: async (productId: number, product: Product) => {
         const existingProduct = cart.find((item) => item.id === product.id);
@@ -112,28 +78,12 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
           const newProductCount = { ...productCount };
           newProductCount[productId] = (newProductCount[productId] || 0) + 1;
           setProductCount(newProductCount);
-          const response = await axios.post("/add-to-cart", {
-            data: {
-              userId: token?.userId,
-              productId: product.id,
-              count: productCount,
-            },
-          });
-          console.log(response.data);
         } else {
           setCart([...cart, product]);
           setCartCount(cartCount + 1);
           const newProductCount = { ...productCount };
           newProductCount[productId] = (newProductCount[productId] || 0) + 1;
           setProductCount(newProductCount);
-          const response = await axios.post("/add-to-cart", {
-            data: {
-              userId: token?.userId,
-              productId: product.id,
-              count: productCount,
-            },
-          });
-          console.log(response.data);
         }
       },
     }),
