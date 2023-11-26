@@ -47,31 +47,31 @@ header {
     .ant-select-customize-input
   )
   .ant-select-selector {
-  background-color: #f0f0f0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  border-radius: 14px;
-  font-family: "Cairo";
-  font-size: 18px;
-  font-weight: bold;
+  background-color: #f0f0f0!important;
+  height: 60px!important;
+  display: flex!important;
+  align-items: center!important;
+  border-radius: 14px!important;
+  font-family: "Cairo"!important;
+  font-size: 18px!important;
+  font-weight: bold!important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-customize-input
   )
   .ant-select-selector {
-  position: relative;
-  background-color: var(--bg-black);
-  border: none;
-  color: #fff;
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative!important;
+  background-color: var(--bg-black)!important;
+  border: none!important;
+  color: #fff!important;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select .ant-select-arrow {
-  color: #fff;
+  color: #fff!important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-select {
-  max-width: 60px;
+  max-width: 60px!important;
 }
 
 :where(
@@ -80,35 +80,35 @@ header {
   .ant-select-selection-item,
 :where(.css-dev-only-do-not-override-1g853jt).ant-select-single.ant-select-open
   .ant-select-selection-placeholder {
-  color: #fff;
+  color: #fff!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-customize-input
   )
   .ant-select-selector {
-  border: 1px solid #fff;
-  font-size: 13px;
+  border: 1px solid #fff!important;
+  font-size: 13px!important;
 }
 
 .ant-select-focused:where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
   .ant-select-selector {
-  border-color: #fff;
+  border-color: #fff!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select:not(
     .ant-select-disabled
   ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
   .ant-select-selector {
-  border-color: var(--red);
+  border-color: var(--red)!important;
 }
 
 :where(.css-dev-only-do-not-override-1g853jt).ant-select-dropdown
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-  background-color: var(--red);
-  color: #fff;
+  background-color: var(--red)!important;
+  color: #fff!important;
 }
 
 .hamburger-screen {
@@ -305,7 +305,7 @@ header {
 :where(.css-dev-only-do-not-override-1g853jt).ant-select-single
   .ant-select-selector
   .ant-select-selection-item {
-  padding: 0;
+  padding: 0!important;
 }
 
 .cartbtn {
