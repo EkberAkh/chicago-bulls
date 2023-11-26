@@ -10,6 +10,7 @@ import {
 
 import { Product } from "../../models";
 
+
 interface CartContextProps {
   cart: Product[];
   cartCount: number;
@@ -20,6 +21,14 @@ interface CartContextProps {
   removeProduct: (productId: number) => void;
   addToCart: (productId: number, product: Product) => void;
 }
+
+// interface JwtDecoded {
+//   email: string;
+//   userId: string;
+//   fullName: string;
+//   exp: number;
+//   iat: number;
+// }
 
 export const CartContext = createContext<CartContextProps | null>(null);
 
@@ -33,6 +42,10 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
   }>({});
 
   //   const [token, setToken] = useState<JwtDecoded | null>(null);
+
+
+  // const accessToken = localStorage.getItem("acces_token");
+  // const token = jwtDecode<JwtDecoded>(accessToken!);
 
 
   //   useEffect(() => {
@@ -52,12 +65,14 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
         updatedProductCount[productId] =
           (updatedProductCount[productId] || 0) + 1;
         setProductCount(updatedProductCount);
+
       },
       decrement: async (productId: number) => {
         setCartCount(cartCount - 1);
         const updatedProductCount = { ...productCount };
         updatedProductCount[productId] -= 1;
         setProductCount(updatedProductCount);
+
       },
       removeAllProducts: () => {
         setCart([]);
@@ -70,6 +85,7 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
         const updatedProductCount = { ...productCount };
         delete updatedProductCount[productId];
         setProductCount(updatedProductCount);
+
       },
       addToCart: async (productId: number, product: Product) => {
         const existingProduct = cart.find((item) => item.id === product.id);
@@ -78,12 +94,13 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
           const newProductCount = { ...productCount };
           newProductCount[productId] = (newProductCount[productId] || 0) + 1;
           setProductCount(newProductCount);
+
         } else {
           setCart([...cart, product]);
           setCartCount(cartCount + 1);
           const newProductCount = { ...productCount };
           newProductCount[productId] = (newProductCount[productId] || 0) + 1;
-          setProductCount(newProductCount);
+          setProductCount(newProductCount)
         }
       },
     }),
