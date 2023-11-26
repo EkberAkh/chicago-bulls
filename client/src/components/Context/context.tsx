@@ -43,8 +43,10 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
 
   //   const [token, setToken] = useState<JwtDecoded | null>(null);
 
+
   // const accessToken = localStorage.getItem("acces_token");
   // const token = jwtDecode<JwtDecoded>(accessToken!);
+
 
   //   useEffect(() => {
   //     if (accessToken) {
@@ -92,16 +94,13 @@ export const CartProvider: FC<PropsWithChildren> = ({ children }) => {
           const newProductCount = { ...productCount };
           newProductCount[productId] = (newProductCount[productId] || 0) + 1;
           setProductCount(newProductCount);
-      
-       
+
         } else {
           setCart([...cart, product]);
           setCartCount(cartCount + 1);
           const newProductCount = { ...productCount };
           newProductCount[productId] = (newProductCount[productId] || 0) + 1;
-          setProductCount(newProductCount);
-       
-     
+          setProductCount(newProductCount)
         }
       },
     }),
